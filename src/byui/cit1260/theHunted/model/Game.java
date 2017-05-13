@@ -13,7 +13,7 @@ import java.util.Objects;
  */
 public class Game implements Serializable {
  
-   private String NoPeople;
+   private int noPeople;
 
     public Game() {
     }
@@ -22,24 +22,24 @@ public class Game implements Serializable {
    
    
 
-    public String getNoPeople() {
-        return NoPeople;
+    public int getnoPeople() {
+        return noPeople;
     }
 
-    public void setNoPeople(String NoPeople) {
-        this.NoPeople = NoPeople;
+    public void setNoPeople(int noPeople) {
+        this.noPeople = noPeople;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 89 * hash + Objects.hashCode(this.NoPeople);
+        hash = 89 * hash + Objects.hashCode(this.noPeople);
         return hash;
     }
 
     @Override
     public String toString() {
-        return "Game{" + "NoPeople=" + NoPeople + '}';
+        return "Game{" + "noPeople=" + noPeople + '}';
     }
 
     
@@ -55,7 +55,7 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (!Objects.equals(this.NoPeople, other.NoPeople)) {
+        if (!Objects.equals(this.noPeople, other.noPeople)) {
             return false;
         }
         return true;

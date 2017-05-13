@@ -6,6 +6,8 @@
 package thehunted;
 
 import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Map;
+import byui.cit1260.theHunted.model.Player;
 
 /**
  *
@@ -18,11 +20,51 @@ public class TheHunted {
      */
     public static void main(String[] args) {
         Game onePlayer = new Game();
-        
-        onePlayer.setNoPeople("One");
-        
+        onePlayer.setNoPeople(1);
         String gameInfo = onePlayer.toString();
         System.out.println(gameInfo);
+        
+        Player playerOne = new Player();
+        playerOne.setName("Gastaun");
+        String playerInfo = playerOne.toString();
+        System.out.println(playerInfo);
+       
+        Player score = new Player();    
+        score.setHighScore(100);
+        String scoreInfo = score.toString();
+        System.out.println(scoreInfo);
+        
+        Map startDesc = new Map();
+        startDesc.setDescription("starting point");
+        String descInfo = startDesc.toString();
+        System.out.println(descInfo);
+        
+        Map whichRow = new Map();
+        whichRow.setRowCount(1);
+        String rowInfo = whichRow.toString();
+        System.out.println(rowInfo);
+        
+        Map whichColumn = new Map();
+        whichColumn.setColumnCount(1);
+        String columnInfo = whichColumn.toString();
+        System.out.println(columnInfo);
+        
+        Map whichScene = new Map();
+        whichScene.setCurrentScene("Alaska");
+        String sceneInfo = whichScene.toString();
+        System.out.println(sceneInfo);
+        
+        Map myRow = new Map();
+        myRow.setCurrentRow(1);
+        String curRowInfo = myRow.toString();
+        System.out.println(curRowInfo);
+        
+        Map myColumn = new Map();
+        myColumn.setCurrentColumn(1);
+        String curColumnInfo = myColumn.toString();
+        System.out.println(curColumnInfo);
+         
     }
+    
     
 }
