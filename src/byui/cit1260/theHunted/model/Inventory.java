@@ -93,6 +93,7 @@ public class Inventory implements Serializable{
     public String toString() {
         return "inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
+}
 
     
     
