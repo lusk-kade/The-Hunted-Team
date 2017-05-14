@@ -13,45 +13,46 @@ import java.util.Objects;
  * @author palme
  */
 public class weapons implements Serializable{
-    
-    /**
-     * @param args the command line argument
-     */
-    public static void main(String[] args) {
-        
-        // TODO code
-    }
-    
-    // class instance variables
-    private String name;
-    private double bestTime;
 
     public weapons() {
     }
     
     
+    // class instance variables
+    private String weaponType;
+    private String weaponName;
+    private String weaponStyle;
 
-    public String getName() {
-        return name;
+    public String getWeaponType() {
+        return weaponType;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setWeaponType(String weaponType) {
+        this.weaponType = weaponType;
     }
 
-    public double getBestTime() {
-        return bestTime;
+    public String getWeaponName() {
+        return weaponName;
     }
 
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
+    public void setWeaponName(String weaponName) {
+        this.weaponName = weaponName;
+    }
+
+    public String getWeaponStyle() {
+        return weaponStyle;
+    }
+
+    public void setWeaponStyle(String weaponStyle) {
+        this.weaponStyle = weaponStyle;
     }
 
     @Override
     public int hashCode() {
         int hash = 5;
-        hash = 71 * hash + Objects.hashCode(this.name);
-        hash = 71 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 97 * hash + Objects.hashCode(this.weaponType);
+        hash = 97 * hash + Objects.hashCode(this.weaponName);
+        hash = 97 * hash + Objects.hashCode(this.weaponStyle);
         return hash;
     }
 
@@ -67,10 +68,13 @@ public class weapons implements Serializable{
             return false;
         }
         final weapons other = (weapons) obj;
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+        if (!Objects.equals(this.weaponType, other.weaponType)) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.weaponName, other.weaponName)) {
+            return false;
+        }
+        if (!Objects.equals(this.weaponStyle, other.weaponStyle)) {
             return false;
         }
         return true;
@@ -78,8 +82,11 @@ public class weapons implements Serializable{
 
     @Override
     public String toString() {
-        return "weapons{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "weapons{" + "weaponType=" + weaponType + ", weaponName=" + weaponName + ", weaponStyle=" + weaponStyle + '}';
     }
+
+    
+    
     
     
     

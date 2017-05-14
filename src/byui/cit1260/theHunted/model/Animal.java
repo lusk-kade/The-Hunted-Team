@@ -13,44 +13,38 @@ import java.util.Objects;
  * @author palme
  */
 public class Animal implements Serializable {
-    
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
-    }
+      
     
     // Instance variables
-    private String name;
-    private double bestTime;
+    private String description;
+    private int pointsWorth;
 
     public Animal() {
     }
     
     
 
-    public String getName() {
-        return name;
+    public String getDescription() {
+        return description;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public double getBestTime() {
-        return bestTime;
+    public int getPointsWorth() {
+        return pointsWorth;
     }
 
-    public void setBestTime(double bestTime) {
-        this.bestTime = bestTime;
+    public void setPointsWorth(int pointsWorth) {
+        this.pointsWorth = pointsWorth;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.bestTime) ^ (Double.doubleToLongBits(this.bestTime) >>> 32));
+        hash = 59 * hash + Objects.hashCode(this.description);
+        hash = 59 * hash + this.pointsWorth;
         return hash;
     }
 
@@ -66,10 +60,10 @@ public class Animal implements Serializable {
             return false;
         }
         final Animal other = (Animal) obj;
-        if (Double.doubleToLongBits(this.bestTime) != Double.doubleToLongBits(other.bestTime)) {
+        if (this.pointsWorth != other.pointsWorth) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -77,8 +71,10 @@ public class Animal implements Serializable {
 
     @Override
     public String toString() {
-        return "Animal{" + "name=" + name + ", bestTime=" + bestTime + '}';
+        return "Animal{" + "description=" + description + ", pointsWorth=" + pointsWorth + '}';
     }
+
+    
     
     
     

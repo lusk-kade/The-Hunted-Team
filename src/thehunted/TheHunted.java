@@ -5,9 +5,12 @@
  */
 package thehunted;
 
+import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
+import byui.cit1260.theHunted.model.weapons;
 
 /**
  *
@@ -63,7 +66,47 @@ public class TheHunted {
         myColumn.setCurrentColumn(1);
         String curColumnInfo = myColumn.toString();
         System.out.println(curColumnInfo);
-         
+        
+        Animal animalOne = new Animal();
+        animalOne.setDescription ("Bear");
+        String curAnimalInfo = animalOne.toString();
+        System.out.println(curAnimalInfo);
+        
+        Animal pointScored = new Animal();
+        pointScored.setPointsWorth (5);
+        String curPoints = pointScored.toString();
+        System.out.println(curPoints);
+        
+        Inventory inventoryOne = new Inventory();
+        inventoryOne.setInventoryType ("Rifle");
+        String curInventory = inventoryOne.toString();
+        System.out.println(curInventory);
+        
+        Inventory quantity = new Inventory();
+        quantity.setQuantityInStock (1);
+        String curQuantity = quantity.toString();
+        System.out.println(curQuantity);
+        
+        Inventory requiredAmountOne = new Inventory();
+        requiredAmountOne.setRequiredAmount (1);
+        String curAmount = requiredAmountOne.toString();
+        System.out.println(curAmount);
+        
+        weapons typeOfWeapon = new weapons();
+        typeOfWeapon.setWeaponType ("Remington");
+        String curWeapon = typeOfWeapon.toString();
+        System.out.println(curWeapon);
+        
+        weapons nameOfWeapon = new weapons();
+        nameOfWeapon.setWeaponName ("Woodmaster 742");
+        String curWeaponName = nameOfWeapon.toString();
+        System.out.println(curWeaponName);
+        
+        weapons styleOfWeapon = new weapons();
+        styleOfWeapon.setWeaponStyle ("Bolt Action");
+        String curWeaponStyle = styleOfWeapon.toString();
+        System.out.println(curWeaponStyle);
+        
     }
     
     
