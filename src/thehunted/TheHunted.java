@@ -8,7 +8,10 @@ package thehunted;
 import byui.cit1260.theHunted.model.Game;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
-
+import byui.cit1260.theHunted.model.Location;
+import byui.cit1260.theHunted.model.Actor;
+import byui.cit1260.theHunted.model.Question;
+import byui.cit1260.theHunted.model.Scene;
 /**
  *
  * @author lus12
@@ -19,6 +22,25 @@ public class TheHunted {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Location locRow = new Location();
+        locRow.equals(2);
+        String locRowInfo = locRow.toString();
+        System.out.println(locRowInfo);
+        
+        Actor name = new Actor();
+        name.setName("Justin");
+        System.out.println(name);
+
+        Question ques = new Question();
+        ques.getQuestion();
+        ques.setAnswer1("Justin Rocks");
+        ques.setAnswer2("Justin is Amazing");
+        ques.setAnswer3("Don't become the prey");
+        ques.getCorrectAnswerNumber();
+        System.out.println(ques);
+        
+        
         Game onePlayer = new Game();
         onePlayer.setNoPeople(1);
         String gameInfo = onePlayer.toString();
@@ -63,7 +85,7 @@ public class TheHunted {
         myColumn.setCurrentColumn(1);
         String curColumnInfo = myColumn.toString();
         System.out.println(curColumnInfo);
-         
+                     
     }
     
     
