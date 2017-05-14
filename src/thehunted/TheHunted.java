@@ -5,13 +5,13 @@
  */
 package thehunted;
 
+import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
-import byui.cit1260.theHunted.model.Location;
-import byui.cit1260.theHunted.model.Actor;
-import byui.cit1260.theHunted.model.Question;
-import byui.cit1260.theHunted.model.Scene;
+import byui.cit1260.theHunted.model.weapons;
+
 /**
  *
  * @author lus12
