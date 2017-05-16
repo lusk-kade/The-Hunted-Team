@@ -5,11 +5,14 @@
  */
 package thehunted;
 
+import byui.cit1260.theHunted.model.Actor;
 import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Game;
-import byui.cit1260.theHunted.model.Inventory;
+// import byui.cit1260.theHunted.model.Inventory;
+import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
+import byui.cit1260.theHunted.model.Question;
 import byui.cit1260.theHunted.model.weapons;
 
 /**
@@ -22,6 +25,25 @@ public class TheHunted {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
+        Location locRow = new Location();
+        locRow.equals(2);
+        String locRowInfo = locRow.toString();
+        System.out.println(locRowInfo);
+        
+        Actor name = new Actor();
+        name.setName("Justin");
+        System.out.println(name);
+
+        Question ques = new Question();
+        ques.getQuestion();
+        ques.setAnswer1("Justin Rocks");
+        ques.setAnswer2("Justin is Amazing");
+        ques.setAnswer3("Don't become the prey");
+        ques.getCorrectAnswerNumber();
+        System.out.println(ques);
+        
+        
         Game onePlayer = new Game();
         onePlayer.setNoPeople(1);
         String gameInfo = onePlayer.toString();
@@ -66,47 +88,7 @@ public class TheHunted {
         myColumn.setCurrentColumn(1);
         String curColumnInfo = myColumn.toString();
         System.out.println(curColumnInfo);
-        
-        Animal animalOne = new Animal();
-        animalOne.setDescription ("Bear");
-        String curAnimalInfo = animalOne.toString();
-        System.out.println(curAnimalInfo);
-        
-        Animal pointScored = new Animal();
-        pointScored.setPointsWorth (5);
-        String curPoints = pointScored.toString();
-        System.out.println(curPoints);
-        
-        Inventory inventoryOne = new Inventory();
-        inventoryOne.setInventoryType ("Rifle");
-        String curInventory = inventoryOne.toString();
-        System.out.println(curInventory);
-        
-        Inventory quantity = new Inventory();
-        quantity.setQuantityInStock (1);
-        String curQuantity = quantity.toString();
-        System.out.println(curQuantity);
-        
-        Inventory requiredAmountOne = new Inventory();
-        requiredAmountOne.setRequiredAmount (1);
-        String curAmount = requiredAmountOne.toString();
-        System.out.println(curAmount);
-        
-        weapons typeOfWeapon = new weapons();
-        typeOfWeapon.setWeaponType ("Remington");
-        String curWeapon = typeOfWeapon.toString();
-        System.out.println(curWeapon);
-        
-        weapons nameOfWeapon = new weapons();
-        nameOfWeapon.setWeaponName ("Woodmaster 742");
-        String curWeaponName = nameOfWeapon.toString();
-        System.out.println(curWeaponName);
-        
-        weapons styleOfWeapon = new weapons();
-        styleOfWeapon.setWeaponStyle ("Bolt Action");
-        String curWeaponStyle = styleOfWeapon.toString();
-        System.out.println(curWeaponStyle);
-        
+                     
     }
     
     
