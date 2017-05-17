@@ -27,7 +27,9 @@ public class TheHunted {
     public static void main(String[] args) {
         
         Location locRow = new Location();
-        locRow.equals(2);
+        locRow.setRow(2);
+        locRow.setColumn(1);
+        locRow.isVisited();
         String locRowInfo = locRow.toString();
         System.out.println(locRowInfo);
         
@@ -36,11 +38,11 @@ public class TheHunted {
         System.out.println(name);
 
         Question ques = new Question();
-        ques.getQuestion();
+        ques.setQuestion("What do you think of Justin?");
         ques.setAnswer1("Justin Rocks");
         ques.setAnswer2("Justin is Amazing");
         ques.setAnswer3("Don't become the prey");
-        ques.getCorrectAnswerNumber();
+        ques.setCorrectAnswerNumber(2);
         System.out.println(ques);
         
         
