@@ -20,7 +20,7 @@ public class Question implements Serializable{
             private String answer1;
             private String answer2;
             private String answer3;
-            private Number correctAnswerNumber;
+            private int correctAnswerNumber;
 
     public Question() {
     }
@@ -64,7 +64,7 @@ public class Question implements Serializable{
     }
 
     public void setCorrectAnswerNumber(Number correctAnswerNumber) {
-        this.correctAnswerNumber = correctAnswerNumber;
+        this.correctAnswerNumber = (int) correctAnswerNumber;
     }
 
     @Override

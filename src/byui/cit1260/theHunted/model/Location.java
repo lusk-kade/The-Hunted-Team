@@ -14,8 +14,8 @@ import java.util.Objects;
  */
 public class Location implements Serializable{
     
-            private double row ;
-            private double column ;
+            private int row ;
+            private int column ;
             private boolean visited ;
 
     public Location() {
@@ -24,19 +24,19 @@ public class Location implements Serializable{
             
             
             
-    public double getRow() {
+    public int getRow() {
         return row;
     }
 
-    public void setRow(double row) {
+    public void setRow(int row) {
         this.row = row;
     }
 
-    public double getColumn() {
+    public int getColumn() {
         return column;
     }
 
-    public void setColumn(double column) {
+    public void setColumn(int column) {
         this.column = column;
     }
 
@@ -51,8 +51,8 @@ public class Location implements Serializable{
     @Override
     public int hashCode() {
         int hash = 3;
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.row) ^ (Double.doubleToLongBits(this.row) >>> 32));
-        hash = 83 * hash + (int) (Double.doubleToLongBits(this.column) ^ (Double.doubleToLongBits(this.column) >>> 32));
+        hash = 83 * hash + (int) (this.row);
+        hash = 83 * hash + (int) (this.column);
         hash = 83 * hash + (this.visited ? 1 : 0);
         return hash;
     }
@@ -69,10 +69,10 @@ public class Location implements Serializable{
             return false;
         }
         final Location other = (Location) obj;
-        if (Double.doubleToLongBits(this.row) != Double.doubleToLongBits(other.row)) {
+        if (this.row != other.row) {
             return false;
         }
-        if (Double.doubleToLongBits(this.column) != Double.doubleToLongBits(other.column)) {
+        if (this.column != other.column) {
             return false;
         }
         if (this.visited != other.visited) {
