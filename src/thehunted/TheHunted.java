@@ -35,6 +35,7 @@ public class TheHunted {
         
         Actor name = new Actor();
         name.setName("Justin");
+        name.setDescription("This is Me");
         System.out.println(name);
 
         Question ques = new Question();

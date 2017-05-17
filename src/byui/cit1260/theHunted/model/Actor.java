@@ -34,20 +34,20 @@ public class Actor implements Serializable{
         this.name = name;
     }
 
-    public double getDescription() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDescription(double description) {
+    public void setDescription(String description) {
         this.description = description;
     }
-        private double description;
+        private String description;
     
     @Override
     public int hashCode() {
         int hash = 7;
         hash = 43 * hash + Objects.hashCode(this.name);
-        hash = 43 * hash + (int) (Double.doubleToLongBits(this.description) ^ (Double.doubleToLongBits(this.description) >>> 32));
+        hash = 43 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -63,7 +63,7 @@ public class Actor implements Serializable{
             return false;
         }
         final Actor other = (Actor) obj;
-        if (Double.doubleToLongBits(this.description) != Double.doubleToLongBits(other.description)) {
+        if (Objects.hashCode(this.description) != Objects.hashCode(other.description)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
