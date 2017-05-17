@@ -1,10 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package byui.cit1260.theHunted.model;
-
+  
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -29,8 +24,8 @@ public class Inventory implements Serializable{
     
     // class instance variables
     private String inventoryType;
-    private double quantityInStock;
-    private double requiredAmount;
+    private int quantityInStock;
+    private int requiredAmount;
 
     public String getInventoryType() {
         return inventoryType;
@@ -40,19 +35,19 @@ public class Inventory implements Serializable{
         this.inventoryType = inventoryType;
     }
 
-    public double getQuantityInStock() {
+    public int getQuantityInStock() {
         return quantityInStock;
     }
 
-    public void setQuantityInStock(double quantityInStock) {
+    public void setQuantityInStock(int quantityInStock) {
         this.quantityInStock = quantityInStock;
     }
 
-    public double getRequiredAmount() {
+    public int getRequiredAmount() {
         return requiredAmount;
     }
 
-    public void setRequiredAmount(double requiredAmount) {
+    public void setRequiredAmount(int requiredAmount) {
         this.requiredAmount = requiredAmount;
     }
 
@@ -93,10 +88,10 @@ public class Inventory implements Serializable{
     public String toString() {
         return "inventory{" + "inventoryType=" + inventoryType + ", quantityInStock=" + quantityInStock + ", requiredAmount=" + requiredAmount + '}';
     }
-}
 
     
     
     
     
     
+}

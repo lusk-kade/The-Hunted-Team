@@ -91,7 +91,23 @@ public class TheHunted {
         myColumn.setCurrentColumn(1);
         String curColumnInfo = myColumn.toString();
         System.out.println(curColumnInfo);
-                     
+        
+        Animal animalOne = new Animal();
+        animalOne.setDescription ("Bear");
+        animalOne.setPointsWorth(5);
+        System.out.println(animalOne.toString());
+        
+        Inventory inventoryOne = new Inventory();
+        inventoryOne.setInventoryType("Ammo");
+        inventoryOne.setQuantityInStock(1);
+        inventoryOne.setRequiredAmount(1);
+        System.out.println(inventoryOne.toString());
+        
+        weapons weaponOne = new weapons();
+        weaponOne.setWeaponName("Rifle");
+        weaponOne.setWeaponStyle("Bolt Action");
+        weaponOne.setWeaponType("Firearm");
+        System.out.println(weaponOne.toString());
     }
     
     
