@@ -26,7 +26,6 @@ public class Inventory implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
-    
     private double unitPrice;
 
     /**
