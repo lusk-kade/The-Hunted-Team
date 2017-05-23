@@ -26,6 +26,27 @@ public class Inventory implements Serializable{
     private String inventoryType;
     private int quantityInStock;
     private int requiredAmount;
+    
+    private double unitPrice;
+
+    /**
+     * Get the value of unitPrice
+     *
+     * @return the value of unitPrice
+     */
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    /**
+     * Set the value of unitPrice
+     *
+     * @param unitPrice new value of unitPrice
+     */
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
 
     public String getInventoryType() {
         return inventoryType;
