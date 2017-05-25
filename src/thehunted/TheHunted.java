@@ -13,7 +13,7 @@ import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
 import byui.cit1260.theHunted.model.Question;
-import byui.cit1260.theHunted.model.weapons;
+import byui.cit1260.theHunted.model.Weapons;
 
 /**
  *
@@ -103,7 +103,7 @@ public class TheHunted {
         inventoryOne.setRequiredAmount(1);
         System.out.println(inventoryOne.toString());
         
-        weapons weaponOne = new weapons();
+        Weapons weaponOne = new Weapons();
         weaponOne.setWeaponName("Rifle");
         weaponOne.setWeaponStyle("Bolt Action");
         weaponOne.setWeaponType("Firearm");
