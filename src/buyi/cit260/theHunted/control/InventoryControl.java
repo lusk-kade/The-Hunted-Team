@@ -9,54 +9,51 @@ package buyi.cit260.theHunted.control;
  *
  * @author lus12
  */
-public class InventoryControl {
-
-    private double nameValue;
-    private String animalName;
+public class InventoryControl { 
     
-  public double calcAnimalPoints(String name, double weight){
-  
-       double pointScalar = .1;
-       //String animalName = ("deer,rabbit,moose,bear");
+    private double nameValue;
 
-       
+
+  public double calcAnimalPoints(String name, double weight){
+
+       double pointScalar = .1;
+
+
+
 	if (name == null) {
 		return -2;
         }
-        
-        if (name != "deer,rabbit,moose,bear") {
+
+        if (!"rabbit".equals(name)) {
                 return -2;
         }
-        
+
 	if (weight < 3) {
                 return -1;
         }
-                
+
         if (weight > 12) {
                 return -1;
         }
-        
-        if (name == "deer,rabbit,moose,bear") {
-                animalName = name;
+
+        if ("rabbit".equals(name)) {
+                nameValue = 1;
         }
-        
-        if (animalName == "deer") {
+
+        if ("deer".equals(name)) {
                 nameValue = 80;
         }
 
-        if (animalName == "rabit") {
-                nameValue = 1;
-        }
-        
-        if (animalName == "moose") {
+        if ("moose".equals(name)) {
                 nameValue = 125;
         }
-        
-        if (animalName == "bear") {
+
+        if ("bear".equals(name)) {
                 nameValue = 200;
         }
-            
+
         double points = (weight * nameValue) / pointScalar;
                 return points;
   }
 }
+
