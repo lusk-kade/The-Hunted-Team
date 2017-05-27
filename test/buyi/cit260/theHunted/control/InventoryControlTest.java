@@ -44,8 +44,75 @@ public class InventoryControlTest {
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
+    
+    {    /************************
+         * Test Case #2
+         ***********************/
+        System.out.println("\tTest Case #2");
+        
+        // Imput values for Test Case #2
+        String name = "rabbit";
+        double weight = -1;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = -1;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+
+    }
+    
+    {    /************************
+         * Test Case #3
+         ***********************/
+        System.out.println("\tTest Case #3");
+        
+        // Imput values for Test Case #3
+        String name = "fluffy";
+        double weight = 8;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = -2;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+
+    }
+    
+    {    /************************
+         * Test Case #4
+         ***********************/
+        System.out.println("\tTest Case #4");
+        
+        // Imput values for Test Case #4
+        String name = "rabbit";
+        double weight = 14;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = -1;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+
+    } 
     
 }
