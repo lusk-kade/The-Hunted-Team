@@ -100,6 +100,7 @@ public class TheHunted {
         inventoryOne.setInventoryType("Ammo");
         inventoryOne.setQuantityInStock(1);
         inventoryOne.setRequiredAmount(1);
+        inventoryOne.setUnitPrice(10);
         System.out.println(inventoryOne.toString());
         
 
