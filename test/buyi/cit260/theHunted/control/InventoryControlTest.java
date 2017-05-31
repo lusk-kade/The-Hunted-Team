@@ -5,6 +5,7 @@
  */
 package buyi.cit260.theHunted.control;
 
+import byui.cit1260.theHunted.model.Inventory;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -114,5 +115,81 @@ public class InventoryControlTest {
         assertEquals(expResult, result, 0.0);
 
     } 
-    
+    @Test
+    public void testCalcPurchase(){
+        Inventory item;
+        double amount;
+        double ret;
+        double expectedReturn;
+        
+        System.out.println("calcPurchase Test Case #1");
+        item = new Inventory();
+        item.setInventoryType("weapon");
+        item.setUnitPrice(25);
+        amount = 2;
+        expectedReturn = 54;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #2");
+        item = new Inventory();
+        item.setInventoryType("ammo");
+        item.setUnitPrice(-5);
+        amount = 3;
+        expectedReturn = -2;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #3");
+        item = new Inventory();
+        item.setInventoryType("ammo");
+        item.setUnitPrice(5);
+        amount = 12;
+        expectedReturn = -1;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #4");
+        item = new Inventory();
+        item.setInventoryType("gear");
+        item.setUnitPrice(10);
+        amount = 0;
+        expectedReturn = -1;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #5");
+        item = new Inventory();
+        item.setInventoryType("weapon");
+        item.setUnitPrice(5);
+        amount = 1;
+        expectedReturn = 5.40;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #6");
+        item = new Inventory();
+        item.setInventoryType("ammo");
+        item.setUnitPrice(10);
+        amount = 10;
+        expectedReturn = 108;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+        
+        System.out.println("calcPurchase Test Case #7");
+        item = new Inventory();
+        item.setInventoryType("gear");
+        item.setUnitPrice(5);
+        amount = 10;
+        expectedReturn = 54;
+
+        ret = InventoryControl.calcPurchase(item, amount);
+        assertEquals(expectedReturn, ret, 0.01);
+    }
 }
