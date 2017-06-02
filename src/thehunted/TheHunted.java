@@ -13,7 +13,7 @@ import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
 import byui.cit1260.theHunted.model.Question;
-import byui.cit1260.theHunted.model.Weapons;
+import byui.cit260.theHunted.view.StartProgramView;
 
 /**
  *
@@ -26,6 +26,55 @@ public class TheHunted {
      */
     public static void main(String[] args) {
         
+
+        
+    // create StartProgramViewOrig and display the start program view
+    StartProgramView startProgramView = new StartProgramView();
+    startProgramView.displayStartProgramView();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  // Initial code for Model Layer      
+/*
         Location locRow = new Location();
         locRow.setRow(2);
         locRow.setColumn(1);
@@ -101,13 +150,12 @@ public class TheHunted {
         inventoryOne.setInventoryType("Ammo");
         inventoryOne.setQuantityInStock(1);
         inventoryOne.setRequiredAmount(1);
+        inventoryOne.setUnitPrice(10);
         System.out.println(inventoryOne.toString());
-        
-        Weapons weaponOne = new Weapons();
-        weaponOne.setWeaponName("Rifle");
-        weaponOne.setWeaponStyle("Bolt Action");
-        weaponOne.setWeaponType("Firearm");
-        System.out.println(weaponOne.toString());
+*/       
+
+
+
     }
     
     
