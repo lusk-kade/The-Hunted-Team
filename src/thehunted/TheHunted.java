@@ -20,7 +20,30 @@ import byui.cit260.theHunted.view.StartProgramView;
  * @author lus12
  */
 public class TheHunted {
+    
+    private static Game currentGame = null;
+    private static Player player = null;
 
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        TheHunted.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        TheHunted.player = player;
+    }
+
+    
+    
+    
+    
     /**
      * @param args the command line arguments
      */
