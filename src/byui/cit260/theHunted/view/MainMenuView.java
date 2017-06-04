@@ -5,7 +5,9 @@
  */
 package byui.cit260.theHunted.view;
 
+import buyi.cit260.theHunted.control.GameControl;
 import java.util.Scanner;
+import thehunted.TheHunted;
 
 /**
  *
@@ -104,7 +106,12 @@ public void displayMainMenuView() {
 
 
     private void startNewGame() {
-        System.out.println("*** startNewGame function called ***");
+            // create a new game
+        GameControl.createNewGame(TheHunted.getPlayer());
+        
+        // display the game menu
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
     private void startExistingGame() {
