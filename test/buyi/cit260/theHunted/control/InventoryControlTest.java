@@ -32,13 +32,13 @@ public class InventoryControlTest {
         
         // Imput values for Test Case #1
         String name = "rabbit";
-        double weight = 8.0;
+        double weight = 8;
         
         // Create instance of InventoryControl class
         InventoryControl instance = new InventoryControl();
         
         // Expected output returned value
-        double expResult = 80.0;
+        double expResult = 80;
         
         // Call function to run test
         double result = instance.calcAnimalPoints(name, weight);
@@ -76,14 +76,14 @@ public class InventoryControlTest {
         System.out.println("\tTest Case #3");
         
         // Imput values for Test Case #3
-        String name = "fluffy";
-        double weight = 8;
+        String name = "rabbit";
+        double weight = 16;
         
         // Create instance of InventoryControl class
         InventoryControl instance = new InventoryControl();
         
         // Expected output returned value
-        double expResult = -2;
+        double expResult = -1;
         
         // Call function to run test
         double result = instance.calcAnimalPoints(name, weight);
@@ -99,8 +99,54 @@ public class InventoryControlTest {
         System.out.println("\tTest Case #4");
         
         // Imput values for Test Case #4
-        String name = "rabbit";
+        String name = "moose";
         double weight = 14;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = 17500;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+
+    }
+    
+    
+    {    /************************
+         * Test Case #5
+         ***********************/
+        System.out.println("\tTest Case #5");
+        
+        // Imput values for Test Case #5
+        String name = "deer";
+        double weight = 415;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = 332000;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+    }
+    
+    {    /************************
+         * Test Case #6
+         ***********************/
+        System.out.println("\tTest Case #6");
+        
+        // Imput values for Test Case #6
+        String name = "deer";
+        double weight = 399;
         
         // Create instance of InventoryControl class
         InventoryControl instance = new InventoryControl();
@@ -114,7 +160,36 @@ public class InventoryControlTest {
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
 
-    } 
+    }
+    
+    {    /************************
+         * Test Case #7
+         ***********************/
+        System.out.println("\tTest Case #7");
+        
+        // Imput values for Test Case #7
+        String name = "deer";
+        double weight = 451;
+        
+        // Create instance of InventoryControl class
+        InventoryControl instance = new InventoryControl();
+        
+        // Expected output returned value
+        double expResult = -1;
+        
+        // Call function to run test
+        double result = instance.calcAnimalPoints(name, weight);
+        
+        // Actual return - compare to expected return
+        assertEquals(expResult, result, 0.0);
+
+    }
+    
+    
+    
+    
+    
+    
     @Test
     public void testCalcPurchase(){
         Inventory item;
