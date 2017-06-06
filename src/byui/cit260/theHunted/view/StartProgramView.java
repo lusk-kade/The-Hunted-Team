@@ -5,6 +5,8 @@
  */
 package byui.cit260.theHunted.view;
 
+import buyi.cit260.theHunted.control.GameControl;
+import byui.cit1260.theHunted.model.Player;
 import java.util.Scanner;
 
 /**
@@ -98,8 +100,39 @@ public class StartProgramView {
 }    
     
     private boolean doAction(String playersName) {
-        System.out.println("\n*** doAction() called ***");
-        return true;
-    }
+        
+        if (playersName.length() < 2) {
+            System.out.println("\nInvalid players name: "
+                     + "The name must be greater than one character in lenght");
+            return false;
+        }
     
+    // call createPlayer() control function
+    Player player = GameControl.createPlayer(playersName);
+    
+        if (player == null) { // if unsuccessful
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+    
+    // display next view
+    this.displayNextView(player);
+    
+    return true; // success!
+     
+    }
+
+    private void displayNextView(Player player) {
+
+        // display a custom welcome message
+        System.out.println("\n======================================"
+                          + "\n Welcome to The Hunted " + player.getName() + "!"
+                          + "\n====================================="
+                          );
+        
+        // Create MainMenuView object
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.display();
+    }
 }
