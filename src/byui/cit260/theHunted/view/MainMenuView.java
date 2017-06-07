@@ -119,16 +119,13 @@ public void displayMainMenuView() {
     }
 
     private void displayHelpMenu() {
-        System.out.println("*** displatHelpMenu function called ***");
+        HelpMenuView helpMenuView = new HelpMenuView();
+        
+        helpMenuView.displayHelpMenuView();
     }
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
-    }
-
-
-    void display() {
-        System.out.println("\n** displayMenu() function called ***");
     }
 
     
