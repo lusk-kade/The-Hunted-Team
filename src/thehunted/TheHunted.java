@@ -15,6 +15,7 @@ import byui.cit1260.theHunted.model.Player;
 import byui.cit1260.theHunted.model.Question;
 import byui.cit260.theHunted.view.StartProgramView;
 import byui.cit260.theHunted.view.MainMenuView;
+import byui.cit260.theHunted.view.GameMenuView;
 
 /**
  *
