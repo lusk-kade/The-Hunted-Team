@@ -6,11 +6,12 @@
 package byui.cit260.theHunted.view;
 
 
-import java.util.Scanner;
-import thehunted.TheHunted;
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import thehunted.MoveMenuView;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,120 +19,74 @@ import thehunted.MoveMenuView;
  */
 public class HuntingView {
     
+
+    private String promptMessage;
     
-    String animalName;
-    
+    public HuntingView() {
         
-    
-    // Need to make 25 of these - Reads input from MoveMenuView
-    if huntingSpot == 1 {
-        System.out.println("\n*** Insert Description of View");
-}
- 
-    if huntingSpot == 2 {
-        System.out.println("\n*** Insert Description of View");
-}    
-    
-    if huntingSpot == 3 {
-        System.out.println("\n*** Insert Description of View");
-}    
- 
-    if huntingSpot == 4 {
-        System.out.println("\n*** Insert Description of View");
-}    
-    
-    if huntingSpot == 5 {
-        System.out.println("\n*** Insert Description of View");
-}    
-
-
-
-    
-    
-
-
-    
-    
-// Animal shows up ready to be hunted
-    
-    if huntingSpot == 3 {
-        System.out.println("\n*** Insert Description of Animal");
-}
-
-    if huntingSpot == 7 {
-        System.out.println("\n*** Insert Description of Animal");
-}
-
-    if huntingSpot == 14 {
-        System.out.println("\n*** Insert Description of Animal");
-}
-
-    if huntingSpot == 19 {
-        System.out.println("\n*** Insert Description of Animal");
-}
-
-    if huntingSpot == 23 {
-        System.out.println("\n*** Insert Description of Animal");
-}
-
-
- public String getAnimalName() {
-
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-         
-        while (!valid) { // loop while an invalid value is entered
-                        
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks            
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-        
-            break; // end the loop
-        
-    }
-        
-        return animalName;
-  
- }
-
- 
- 
-    private String doAction(String choice) {
-        switch (choice) {
-            case "rabbit":
-                this.CalcAnmialPoints();
-                break;
-            case "deer":
-                this.CalcAnmialPoints();
-                break;
-            case "moose":
-                this.CalcAnmialPoints();
-                break;
-            case "bear":
-                this.CalcAnmialPoints();
-                break;
-                return;
-            default:
-                System.out.println("\n*** Invalid selection *** Try Again");
-                break;
+        this.promptMessage = "\nYou are feeling lucky";
+        try {
+            TimeUnit.SECONDS.sleep(90);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HuntingView.class.getName()).log(Level.SEVERE, null, ex);
         }
+        // display the banner when view is created
+        this.displayBanner();
+        
+    }    
+    
+    
+    private void displayBanner() {
+        
+        System.out.println(
+                "\n***********************************"
+               +"\n*                                 *"
+               +"\n* You have been quiet and ready   *"
+               +"\n* to hunt. This area is known to  *"
+               +"\n* be the place where the most     *"
+               +"\n* animals are spoted.  *"
+               +"\n*                                 *"
+               +"\n* Be ready at any moment, you     *"
+               +"\n* never know when an animal will  *"
+               +"\n* appear!                         *"
+               +"\n*                                 *"
+               +"\n***********************************"
+               );     
+    }     
+    
+    /*
+    public void HuntingView(){
+     
+            try {
+            TimeUnit.SECONDS.sleep(30);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(HuntingView.class.getName()).log(Level.SEVERE, null, ex);
+        }    
+        
+        if (location = 3) {
+            System.out.println("\n***Animal has shown up***"
+                   + "\nYou take the shot an make the kill."
+                   + "\nYou move to inspect your kill."
+                   + "\nYour rabbit weighs 9 pounds.");
+        }
+        
+        
     }
-
-    private void CalcAnmialPoints() {
-        int value = GameContorl.calcAnimalPoints(theHunted.getAnimalName());
-    }
- 
- 
- 
- 
- 
- 
- 
- 
- 
+    
+    
+   public String getAnimalName() {
+       
+       String animalName;
+       double animalWeight;
+       
+       do{
+           System.out.println("\nGreat shot!");
+           animalName = this.getAnimalName();
+           animalWeight = this.getAnimalWeight();
+       }
+       
+       
+   }
+    
+   */
 }

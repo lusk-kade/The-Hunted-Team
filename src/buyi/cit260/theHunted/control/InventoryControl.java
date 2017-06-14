@@ -16,11 +16,11 @@ public class InventoryControl {
     private double nameValue;
 
 
-  public double calcAnimalPoints(String name, double weight){
+  public double calcAnimalPoints(String animalName, double animalWeight){
 
        double pointScalar = .1;
 
-       switch (name) {
+       switch (animalName) {
            case "rabbit":
             nameValue = 1;
             break;
@@ -37,50 +37,33 @@ public class InventoryControl {
             return -2; //System.out.println("\n*** Invalide animal name *** Try again");
        }
        
-       if ("rabbit".equals(name) & (weight > 15 || weight < 3)) {
+       if ("rabbit".equals(animalName) & (animalWeight > 15 || animalWeight < 3)) {
            return -1;
        }
        
-       if ("deer".equals(name) & (weight > 450 || weight < 400)) {
+       if ("deer".equals(animalName) & (animalWeight > 450 || animalWeight < 400)) {
            return -1;
        }
                
 
-	//if (name == null) {
-	//	return -2;
-        //}
 
-        //if (!"rabbit".equals(name)) {
-        //        return -2;
-        //}
 
-	//if (weight < 3) {
-        //        return -1;
-        //}
-
-        //if (weight > 12) {
-        //        return -1;
-        //}
-
-        //if ("rabbit".equals(name)) {
-        //        nameValue = 1;
-        //}
-
-        //if ("deer".equals(name)) {
-        //       nameValue = 80;
-        //}
-
-        //if ("moose".equals(name)) {
-        //        nameValue = 125;
-        //}
-
-        //if ("bear".equals(name)) {
-        //        nameValue = 200;
-        //}
-
-        double points = (weight * nameValue) / pointScalar;
+        double points = (animalWeight * nameValue) / pointScalar;
                 return points;
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   static public double calcPurchase(Inventory item, double amount) {
 
