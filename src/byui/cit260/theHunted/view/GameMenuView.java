@@ -37,12 +37,6 @@ public class GameMenuView {
                         + "\nQ - Quit                             "
                         + "\n-------------------------------------"; 
 
-   /* void displayMenu() {
-        System.out.println("\n*** displayMenu stub function called ***");
-        NewLocationView locationView = new NewLocationView();
-        locationView.displayNewLocationView();
-    }
-    */
 }
         
 public void displayGameMenuView() {
@@ -134,20 +128,6 @@ private String getGameMenuOption() {
     }
     
 
-
-    // Also need help with 
-    private void startNewGame() {
-            // create a new game
-        GameControl.createNewGame(TheHunted.getPlayer());
-        
-        // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenuView();
-    }
-
-    private void startExistingGame() {
-         System.out.println("*** startExistingGame function called ***");
-    }
 
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();

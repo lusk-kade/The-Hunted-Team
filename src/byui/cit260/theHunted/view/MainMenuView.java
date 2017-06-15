@@ -13,80 +13,39 @@ import thehunted.TheHunted;
  *
  * @author Justin
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private String menu;
+    public MainMenuView() {
     
-    
-        public MainMenuView(){
-        this.menu =   "\n"
+               super ("\n"
                     + "\n-------------------------------------"
                     + "\n| Main Menu                         |"
                     + "\n-------------------------------------"
                     + "\nN - Start New Game"
                     + "\nG - Get and start saved game"
+                    + "\nM - Game Menu"
                     + "\nH - Get help on how to play the game"
                     + "\nS - Save Game"
                     + "\nQ - Quit"
-                    + "\n-------------------------------------";      
-        
+                    + "\n-------------------------------------");    
     }
 
+       
         
-public void displayMainMenuView() {
-    
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(menuOption);
-            
-        } while (!done);  
-    
-}
+    @Override
+    public boolean doAction(String value) {
         
-
-
-    private String getMenuOption() {
-
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-         
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks            
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
+        value = value.toUpperCase(); // convert choice to upper case
         
-            break; // end the loop
-            
-    }
-    
-    return value; // return the value entered
-        
-        
-    }
-
-    private boolean doAction(String choice) {
-        
-        choice = choice.toUpperCase(); // convert choice to upper case
-        
-        switch (choice) {
+        switch (value) {
             case "N": // create and start a new game
                 this.startNewGame();
                 break;
             case "G": // get and start an existing game
                 this.startExistingGame();
+                break;
+            case "M": // get game menu
+                this.displayGameMenu();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
@@ -126,6 +85,11 @@ public void displayMainMenuView() {
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
+    }
+
+    private void displayGameMenu() {
+         GameMenuView gameMenu = new GameMenuView();
+         gameMenu.displayMenu();
     }
 
     
