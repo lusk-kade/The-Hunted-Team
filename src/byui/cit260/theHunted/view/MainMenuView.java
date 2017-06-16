@@ -69,8 +69,8 @@ public class MainMenuView extends View {
         GameControl.createNewGame(TheHunted.getPlayer());
         
         // display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayGameMenu();
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenuView();
     }
 
     private void startExistingGame() {
@@ -88,8 +88,9 @@ public class MainMenuView extends View {
     }
 
     private void displayGameMenu() {
-         GameMenuView gameMenu = new GameMenuView();
-         gameMenu.displayGameMenu();
+         GameMenuView gameMenuView = new GameMenuView();
+         
+         gameMenuView.displayGameMenuView();
     }
 
     

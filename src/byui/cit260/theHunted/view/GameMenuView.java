@@ -175,10 +175,6 @@ private String getGameMenuOption() {
         System.out.println("*** viewGear function called ***");
     }
 
-    void displayGameMenu() {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.displayGameMenu();
-    }
 
     
 }
