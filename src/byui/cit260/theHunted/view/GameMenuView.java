@@ -15,11 +15,11 @@ import thehunted.TheHunted;
  */
 public class GameMenuView {
     
-    private String gameMenu;
+    private String menu;
     
     
         public GameMenuView(){
-        this.gameMenu =   "\n"
+        this.menu =   "\n"
                         + "\n*************************************"
                         + "\n           Game Menu                 "
                         + "\n*************************************"
@@ -62,7 +62,7 @@ private String getGameMenuOption() {
         boolean valid = false; // initialize to not valid
          
         while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.gameMenu);
+            System.out.println("\n" + this.menu);
             
             value = keyboard.nextLine(); // get next line typed on keyboard
             value = value.trim(); // trim off leading and trailing blanks            
@@ -175,8 +175,9 @@ private String getGameMenuOption() {
         System.out.println("*** viewGear function called ***");
     }
 
-    void displayMenu() {
-        System.out.println("*** displayMenu function called ***");
+    void displayGameMenu() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.displayGameMenu();
     }
 
     
