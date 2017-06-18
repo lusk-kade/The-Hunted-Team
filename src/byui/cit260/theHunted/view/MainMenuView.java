@@ -89,7 +89,6 @@ public class MainMenuView extends View {
 
     private void displayGameMenu() {
          GameMenuView gameMenuView = new GameMenuView();
-         
          gameMenuView.displayGameMenuView();
     }
 

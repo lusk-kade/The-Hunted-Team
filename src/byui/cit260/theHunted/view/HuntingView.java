@@ -17,11 +17,12 @@ import java.util.logging.Logger;
  *
  * @author Justin
  */
-public class HuntingView {
+public class HuntingView extends View {
     
 
-    private String promptMessage;
+
     
+/*    
     public HuntingView() {
         
         this.promptMessage = "\nYou are feeling lucky";
@@ -34,59 +35,49 @@ public class HuntingView {
         this.displayBanner();
         
     }    
+  */  
     
+    public HuntingView() {
     
-    private void displayBanner() {
-        
-        System.out.println(
-                "\n***********************************"
-               +"\n*                                 *"
-               +"\n* You have been quiet and ready   *"
-               +"\n* to hunt. This area is known to  *"
-               +"\n* be the place where the most     *"
-               +"\n* animals are spoted.  *"
-               +"\n*                                 *"
-               +"\n* Be ready at any moment, you     *"
-               +"\n* never know when an animal will  *"
-               +"\n* appear!                         *"
-               +"\n*                                 *"
-               +"\n***********************************"
-               );     
+         super ( "\n***********************************"
+               + "\n*                                 *"
+               + "\n* You have been quiet and ready   *"
+               + "\n* to hunt. This area is known to  *"
+               + "\n* be the place where the most     *"
+               + "\n* animals are spoted.  *"
+               + "\n*                                 *"
+               + "\n* Be ready at any moment, you     *"
+               + "\n* never know when an animal will  *"
+               + "\n* appear!                         *"
+               + "\n*                                 *"
+               + "\n***********************************"); 
+         
+         
     }     
     
-    /*
-    public void HuntingView(){
-     
-            try {
-            TimeUnit.SECONDS.sleep(30);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(HuntingView.class.getName()).log(Level.SEVERE, null, ex);
-        }    
+    @Override
+    public boolean doAction(String value) {
         
-        if (location = 3) {
-            System.out.println("\n***Animal has shown up***"
-                   + "\nYou take the shot an make the kill."
-                   + "\nYou move to inspect your kill."
-                   + "\nYour rabbit weighs 9 pounds.");
+        value = value.toUpperCase(); // convert choice to upper case
+        
+        switch (value) {
+            case "F":
+                this.fireWeapon();
+                break;
+            case "N":
+                this.fireWeapon();
+                break;
+            default:
+                System.out.println("\n*** Invalid Selection *** Try again");
+                break;                
         }
         
-        
+        return false;
     }
+
+    private void fireWeapon() {
+        // May call the CalcAnimalPoints or Another View - Not sure yet
+    }
+
     
-    
-   public String getAnimalName() {
-       
-       String animalName;
-       double animalWeight;
-       
-       do{
-           System.out.println("\nGreat shot!");
-           animalName = this.getAnimalName();
-           animalWeight = this.getAnimalWeight();
-       }
-       
-       
-   }
-    
-   */
 }
