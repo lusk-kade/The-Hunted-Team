@@ -13,13 +13,13 @@ import thehunted.TheHunted;
  *
  * @author Robert 
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    private String menu;
+ 
     
     
         public GameMenuView(){
-        this.menu =   "\n"
+                   super ("\n"
                         + "\n*************************************"
                         + "\n           Game Menu                 "
                         + "\n*************************************"
@@ -35,53 +35,13 @@ public class GameMenuView {
                         + "\nS - Save Game                        " 
                         + "\nH - Help                             " 
                         + "\nQ - Quit                             "
-                        + "\n-------------------------------------"; 
+                        + "\n-------------------------------------"); 
 
 }
         
-public void displayGameMenuView() {
-    
-        boolean done = false; // set flag to not done
-        do {
-            // prompt for and get players name
-            String gameMenuOption = this.getGameMenuOption();
-            if (gameMenuOption.toUpperCase().equals("Q")) // user wants to quit
-                return; // exit the game
-            
-            // do the requested action and display the next view
-            done = this.doAction(gameMenuOption);
-            
-        } while (!done);  
-    
-}
 
-private String getGameMenuOption() {
-
-        Scanner keyboard = new Scanner(System.in); // get infile for keyboard
-        String value = ""; // value to be returned
-        boolean valid = false; // initialize to not valid
-         
-        while (!valid) { // loop while an invalid value is entered
-            System.out.println("\n" + this.menu);
-            
-            value = keyboard.nextLine(); // get next line typed on keyboard
-            value = value.trim(); // trim off leading and trailing blanks            
-            
-            if (value.length() < 1) { // value is blank
-                System.out.println("\nInvalid value: value can not be blank");
-                continue;
-            }
-        
-            break; // end the loop
-            
-    }
-    
-    return value; // return the value entered
-        
-        
-    }
-    // Need some help with the switch.
-    private boolean doAction(String choice) {
+    @Override // Need some help with the switch.
+    public boolean doAction(String choice) {
         
         choice = choice.toUpperCase(); // convert choice to upper case
         
@@ -174,6 +134,11 @@ private String getGameMenuOption() {
     private void viewGear() {
         System.out.println("*** viewGear function called ***");
     }
+
+
+
+
+
 
 
     
