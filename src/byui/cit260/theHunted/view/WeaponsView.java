@@ -20,7 +20,6 @@ public class WeaponsView extends View {
                     + "\nR - Rifle"
                     + "\nB - Bow"
                     + "\nK - Knife"
-                    + "\nS - Save Game"
                     + "\nQ - Quit"
                     + "\n-------------------------------------");
     
@@ -40,9 +39,6 @@ public class WeaponsView extends View {
             case "K": // get game menu
                 this.chooseKnife();
                 break;
-            case "S": // save the current game
-                this.saveGame();
-                break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
                 break;
@@ -61,14 +57,5 @@ public class WeaponsView extends View {
 
     private void chooseKnife() {
         System.out.println("*** chooseKnife function called ***");
-    }
-
-    private void saveGame() {
-        System.out.println("*** saveGame function called ***");
-    }
-    
-    public void displayWeaponsView() {
-         WeaponsView weaponsView = new WeaponsView(); 
-         weaponsView.display();
     }
 }

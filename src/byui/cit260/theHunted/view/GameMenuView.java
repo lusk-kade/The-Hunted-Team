@@ -112,7 +112,8 @@ public class GameMenuView extends View {
     }
 
     private void selectWeapon() {
-        System.out.println("*** selectWeapon function called ***");
+         WeaponsView weaponsView = new WeaponsView(); 
+         weaponsView.display();
     }
 
     private void selectDesiredAnimal() {
