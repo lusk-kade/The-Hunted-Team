@@ -18,6 +18,8 @@ public class Scene implements Serializable{
             private String description ;
             private boolean blocked ;
             private String symbol ;
+            private Inventory[] inventory;
+            private Question[] question;
 
     public Scene() {
     }
@@ -48,6 +50,26 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    public Question[] getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question[] question) {
+        this.question = question;
+    }
+
+
+    
+
+    
     @Override
     public int hashCode() {
         int hash = 7;

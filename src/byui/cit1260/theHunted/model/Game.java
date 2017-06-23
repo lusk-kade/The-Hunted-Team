@@ -5,6 +5,7 @@
  */
 package byui.cit1260.theHunted.model;
 
+import buyi.cit260.theHunted.control.GameControl;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -14,13 +15,16 @@ import java.util.Objects;
 public class Game implements Serializable {
  
    private int noPeople;
+   private Player player;
+   private Map map;
+   private Inventory[] inventory;
 
-    public Game() {
+   
+   
+   public Game() {
     }
 
-
-   
-   
+ 
 
     public int getnoPeople() {
         return noPeople;
@@ -30,6 +34,32 @@ public class Game implements Serializable {
         this.noPeople = noPeople;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
+    public Inventory[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory[] inventory) {
+        this.inventory = inventory;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 5;
@@ -59,6 +89,10 @@ public class Game implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public void setInventory(GameControl.Inventory[] inventoryList) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

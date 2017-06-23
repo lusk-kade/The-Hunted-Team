@@ -16,6 +16,7 @@ public class Player implements Serializable {
     
     private String name ;
     private double highScore;
+    private Actor actor;
 
     public Player() {
     }
@@ -38,6 +39,14 @@ public class Player implements Serializable {
         this.highScore = highScore;
     }
 
+    public Actor getActor() {
+        return actor;
+    }
+
+    public void setActor(Actor actor) {
+        this.actor = actor;
+    }  
+    
     @Override
     public int hashCode() {
         int hash = 5;

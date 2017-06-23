@@ -5,6 +5,7 @@
  */
 package byui.cit1260.theHunted.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -12,67 +13,39 @@ import java.util.Objects;
  *
  * @author Justin
  */
-public class Actor implements Serializable{
+public enum Actor implements Serializable{
     
-        private String name ;
+    
+    ShopKeeper("");
+    
+        private final String description;
+        private final Point coordinates;
 
-    public Actor() {
+
+    Actor(String description) {
+        this.description = description;
+        coordinates = new Point(1,1);
     }
 
-    @Override
-    public String toString() {
-        return "Actor{" + "name=" + name + ", description=" + description + '}';
-    }
-
-         
-        
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
+    
     public String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-        private String description;
-    
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + Objects.hashCode(this.name);
-        hash = 43 * hash + Objects.hashCode(this.description);
-        return hash;
+    public Point getCoordinates() {
+        return coordinates;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Actor other = (Actor) obj;
-        if (Objects.hashCode(this.description) != Objects.hashCode(other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        return true;
-    }
+    
+
 
         
-        
-    
+    /*    
+       @Override
+    public String toString() {
+        return "Actor{" + "name=" + name + ", description=" + description + '}';
+    }
+    */
+
+
 }

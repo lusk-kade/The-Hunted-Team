@@ -5,6 +5,9 @@
  */
 package buyi.cit260.theHunted.control;
 
+import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Inventory;
+import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
 import thehunted.TheHunted;
 
@@ -31,7 +34,31 @@ public class GameControl {
         }
 
     public static void createNewGame(Player player) {
-        System.out.println("\n*** createNewGame stub function called ***");
+        
+        Game game = new Game();
+        TheHunted.setCurrentGame(game);
+        
+        game.setPlayer(player);
+        
+        Inventory[] inventoryList = GameControl.createInventoryList();
+        game.setInventory(inventoryList);
+        
+        Map map = MapControl.createMap();
+        game.setMap(map);
+        
+        MapControl.moveActorToStartingLocation(map);
     }
+
+    private static Inventory[] createInventoryList() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public static class Inventory {
+
+        public Inventory() {
+        }
+    }
+
+
     
 }
