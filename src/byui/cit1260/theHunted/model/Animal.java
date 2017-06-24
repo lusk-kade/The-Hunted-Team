@@ -15,11 +15,11 @@ import java.util.Objects;
  */
 public enum Animal implements Serializable {
       
-    
-    rabbit("White"),
+    noAnimal("No Animal Here!"),
+    rabbit("White Rabbit"),
     deer("White Tale"),
-    elk(""),
-    moose(""),
+    elk("Elk"),
+    moose("Moose"),
     bear("Grizzly");
     
     

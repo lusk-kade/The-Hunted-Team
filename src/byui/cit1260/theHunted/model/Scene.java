@@ -20,8 +20,18 @@ public class Scene implements Serializable{
             private String symbol ;
             private Inventory[] inventory;
             private Question[] question;
+            private Animal animal;
 
     public Scene() {
+        animal = Animal.noAnimal;
+    }
+
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
     }
 
             
