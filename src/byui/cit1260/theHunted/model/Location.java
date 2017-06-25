@@ -19,6 +19,7 @@ public class Location implements Serializable{
             private boolean visited ;
             private Actor[] actor;
             private Animal[] animal;
+            private Scene scene;
 
     public Location() {
     }
@@ -105,6 +106,16 @@ public class Location implements Serializable{
     @Override
     public String toString() {
         return "Location{" + "row=" + row + ", column=" + column + ", visited=" + visited + '}';
+    }
+
+    
+    public Scene getScene() {
+        return scene;
+    }
+        
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
     }
             
             
