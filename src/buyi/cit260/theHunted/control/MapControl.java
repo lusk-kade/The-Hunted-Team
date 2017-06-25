@@ -6,6 +6,7 @@
 package buyi.cit260.theHunted.control;
 
 import byui.cit1260.theHunted.model.Animal;
+import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Scene;
 import byui.cit1260.theHunted.model.SceneType;
@@ -40,7 +41,192 @@ class MapControl {
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.blackRiver.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
+
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("HD");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.highDesert.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+
+
+        currentScene = new Scene();
+        currentScene.setSymbol("ND");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.nightDesert.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("LD");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.lowDesert.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+       
+
+        currentScene = new Scene();
+        currentScene.setSymbol("GR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.greenRiver.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("LR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.loganRiver.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("SR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.sanJuanRiver.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("VR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.virginRiver.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("WR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.whiteRiver.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("DM");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.denaliMountain.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("MF");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.mountForaker.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("ME");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.mountSaintElias.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("MB");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.mountBlackburn.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("MH");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.mountHunter.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("OS");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.okefenokeeSwamp.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("CS");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.corkscrewSwamp.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("BS");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.barleyBarberSwamp.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("GS");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.greenSwamp.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("KS");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.kissimmeeSwamp.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("SF");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.sierraNationalForest.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("CF");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.clevelandNationalForest.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("CF");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.chandelierForest.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+
+        currentScene = new Scene();
+        currentScene.setSymbol("YR");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.yosemiteForest.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
+        
+        
+        currentScene = new Scene();
+        currentScene.setSymbol("FI");
+        currentScene.setDescription("It's water!");
+        currentScene.setAnimal(Animal.bear);
+        scenes[SceneType.finish.ordinal()] = currentScene;
+        // Keep adding until we hit 25 scenes
         return scenes;
+        
     }
     public static void movePlayerToStartingLocation(Map map) {
      // If starting location is not supposed to be 0,0 then use the correct values here.
@@ -52,8 +238,13 @@ public static void movePlayer(Map map, int row, int column) {
    map.getCurrentLocation().setVisited(true);
    map.setCurrentRow(row);
    map.setCurrentColumn(column);
+ 
+}
+
+
+
 
 }
 
-    
-}
+
+
