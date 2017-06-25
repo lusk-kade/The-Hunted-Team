@@ -35,7 +35,7 @@ class MapControl {
         scenes[SceneType.start.ordinal()] = currentScene;
         
         currentScene = new Scene();
-        currentScene.setSymbol("RI");
+        currentScene.setSymbol("BR");
         currentScene.setDescription("It's water!");
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.blackRiver.ordinal()] = currentScene;
