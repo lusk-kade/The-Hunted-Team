@@ -15,14 +15,14 @@ import byui.cit1260.theHunted.model.SceneType;
  *
  * @author Justin
  */
-class MapControl {
+public class MapControl {
 
     public static Map createMap() {
        Map map = new Map(5,5);
        
        Scene[] scenes = createScenes();
        
-       //GameControl.assignScenesToLocations(map, scenes);
+       GameControl.assignScenesToLocations(map, scenes);
        
        return map;
     }
@@ -45,7 +45,9 @@ class MapControl {
         
         currentScene = new Scene();
         currentScene.setSymbol("HD");
-        currentScene.setDescription("It's water!");
+        currentScene.setDescription(
+                "The desert is hot and dry."
+                + "You will need plenty of water.");
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.highDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
@@ -53,7 +55,11 @@ class MapControl {
 
         currentScene = new Scene();
         currentScene.setSymbol("ND");
-        currentScene.setDescription("It's water!");
+        currentScene.setDescription(
+                "This is where you need to use caution"
+                + "and be aware of your surroundings."
+                + "I hope you brought light to shine"
+                + "in the darkness.");
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.nightDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
@@ -61,7 +67,10 @@ class MapControl {
         
         currentScene = new Scene();
         currentScene.setSymbol("LD");
-        currentScene.setDescription("It's water!");
+        currentScene.setDescription(
+                "There is very little cover here, so"
+                + "you have to be fast to hunt game"
+                + "in this area.");
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.lowDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
@@ -213,7 +222,7 @@ class MapControl {
 
         currentScene = new Scene();
         currentScene.setSymbol("YR");
-        currentScene.setDescription("It's water!");
+        currentScene.setDescription("Yosemite Forest. Watch for bears!");
         currentScene.setAnimal(Animal.bear);
         scenes[SceneType.yosemiteForest.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes

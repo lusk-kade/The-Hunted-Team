@@ -17,7 +17,7 @@ public class Map implements Serializable{
     private String description;
     private int rowCount;
     private int columnCount;
-    private String currentScene;
+    //private String currentScene;
     private int currentRow;
     private int currentColumn;
     private Location currentLocation;
@@ -91,13 +91,13 @@ public class Map implements Serializable{
         this.columnCount = columnCount;
     }
 
-    public String getCurrentScene() {
-        return currentScene;
+    public Scene getCurrentScene() {
+        return currentLocation.getScene();
     }
 
-    public void setCurrentScene(String currentScene) {
+    /*public void setCurrentScene(String currentScene) {
         this.currentScene = currentScene;
-    }
+    }*/
 
     public int getCurrentRow() {
         return currentRow;
@@ -121,7 +121,7 @@ public class Map implements Serializable{
         hash = 67 * hash + Objects.hashCode(this.description);
         hash = 67 * hash + this.rowCount;
         hash = 67 * hash + this.columnCount;
-        hash = 67 * hash + Objects.hashCode(this.currentScene);
+        hash = 67 * hash + Objects.hashCode(this.getCurrentScene());
         hash = 67 * hash + this.currentRow;
         hash = 67 * hash + this.currentColumn;
         return hash;
@@ -129,7 +129,7 @@ public class Map implements Serializable{
 
     @Override
     public String toString() {
-        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentScene=" + currentScene + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
+        return "Map{" + "description=" + description + ", rowCount=" + rowCount + ", columnCount=" + columnCount + ", currentRow=" + currentRow + ", currentColumn=" + currentColumn + '}';
     }
  
     
@@ -159,9 +159,6 @@ public class Map implements Serializable{
             return false;
         }
         if (!Objects.equals(this.description, other.description)) {
-            return false;
-        }
-        if (!Objects.equals(this.currentScene, other.currentScene)) {
             return false;
         }
         return true;

@@ -17,8 +17,6 @@ public class Location implements Serializable{
             private int row ;
             private int column ;
             private boolean visited ;
-            private Actor[] actor;
-            private Animal[] animal;
             private Scene scene;
 
     public Location() {
@@ -51,25 +49,6 @@ public class Location implements Serializable{
         this.visited = visited;
     }
 
-    public Actor[] getActor() {
-        return actor;
-    }
-
-    public void setActor(Actor[] actor) {
-        this.actor = actor;
-    }
-
-    public Animal[] getAnimal() {
-        return animal;
-    }
-
-    public void setAnimal(Animal[] animal) {
-        this.animal = animal;
-    }
-
-
-    
-    
     @Override
     public int hashCode() {
         int hash = 3;

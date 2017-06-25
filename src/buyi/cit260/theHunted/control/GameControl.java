@@ -43,8 +43,8 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        Inventory[] inventoryList = GameControl.createInventoryList();
-        game.setInventory(inventoryList);
+        //Inventory[] inventoryList = GameControl.createInventoryList();
+        //game.setInventory(inventoryList);
         
         Map map = MapControl.createMap();
         game.setMap(map);
@@ -64,7 +64,7 @@ public class GameControl {
 
 
     
-    static void assignScenesToLocation(Map map, Scene[] scenes) {
+    public static void assignScenesToLocations(Map map, Scene[] scenes) {
         Location[][] locations = map.getLocations();
         
         locations[0][0].setScene(scenes[SceneType.start.ordinal()]);
