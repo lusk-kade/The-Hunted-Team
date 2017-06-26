@@ -9,7 +9,7 @@ package byui.cit260.theHunted.view;
  *
  * @author Robert
  */
-public abstract class InventoryView extends View {
+public class InventoryView extends View {
     
     public InventoryView() {
         
