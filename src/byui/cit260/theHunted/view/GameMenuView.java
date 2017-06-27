@@ -35,7 +35,7 @@ public class GameMenuView extends View {
                         + "\nU - Use Weapon                       "   
                         + "\nR - Retrieve Animal                  " 
                         + "\nP - Player Status                    " 
-                        + "\nG - View Gear                        " 
+                        + "\nG - Choose Gear                      " 
                         + "\nS - Save Game                        " 
                         + "\nH - Help                             " 
                         + "\nQ - Quit                             "
@@ -78,7 +78,7 @@ public class GameMenuView extends View {
                 this.playerStats();
                 break;
             case "G": // Select the desired animal
-                this.viewGear();
+                this.chooseGear();
                 break;
             case "S": // Select the desired animal
                 this.saveGame();
@@ -181,8 +181,10 @@ public class GameMenuView extends View {
         System.out.println("*** playerStats function called ***");
     }
 
-    private void viewGear() {
-        System.out.println("*** viewGear function called ***");
+    private void chooseGear() {
+        InventoryView inventoryView = new InventoryView();
+        inventoryView.display();
+        
     }
 
     private void movePlayer() {

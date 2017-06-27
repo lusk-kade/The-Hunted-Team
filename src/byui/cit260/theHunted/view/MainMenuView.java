@@ -23,7 +23,6 @@ public class MainMenuView extends View {
                     + "\n-------------------------------------"
                     + "\nN - Start New Game"
                     + "\nG - Get and start saved game"
-                    + "\nM - Game Menu"
                     + "\nH - Get help on how to play the game"
                     + "\nS - Save Game"
                     + "\nQ - Quit"
@@ -43,9 +42,6 @@ public class MainMenuView extends View {
                 break;
             case "G": // get and start an existing game
                 this.startExistingGame();
-                break;
-            case "M": // get game menu
-                this.displayGameMenu();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
@@ -85,12 +81,5 @@ public class MainMenuView extends View {
 
     private void saveGame() {
         System.out.println("*** saveGame function called ***");
-    }
-
-    private void displayGameMenu() {
-         GameMenuView gameMenuView = new GameMenuView();
-         gameMenuView.display();
-    }
-
-    
+    }   
 }

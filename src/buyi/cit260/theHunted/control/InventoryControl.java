@@ -46,9 +46,6 @@ public class InventoryControl {
        if ("deer".equals(animalName) & (animalWeight > 450 || animalWeight < 400)) {
            return -1;
        }
-               
-
-
 
         double points = (animalWeight * nameValue) / pointScalar;
                 gamePoints = points;
