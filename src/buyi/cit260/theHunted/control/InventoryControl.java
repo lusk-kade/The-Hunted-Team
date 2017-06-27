@@ -6,6 +6,7 @@
 package buyi.cit260.theHunted.control;
 
 import byui.cit1260.theHunted.model.Inventory;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,7 @@ import byui.cit1260.theHunted.model.Inventory;
 public class InventoryControl { 
     
     private double nameValue;
+    private double gamePoints;
 
 
   public double calcAnimalPoints(String animalName, double animalWeight){
@@ -46,8 +48,32 @@ public class InventoryControl {
        }
 
         double points = (animalWeight * nameValue) / pointScalar;
+                gamePoints = points;
                 return points;
   }
+  
+  
+ 
+  public void addTotalPoints(ArrayList<Total> gamePoints) {
+      
+      for (int i = 0; i <gamePoints.size(); i++) {
+          
+          Total total = gamePoints.get(i);
+          System.out.println("\n New Point total is " + total.getGamePoints());
+      }
+      
+      
+  }
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   static public double calcPurchase(Inventory item, double amount) {
 
@@ -82,6 +108,14 @@ public class InventoryControl {
 
     }
 
-  
+    private static class Total {
+
+        public Total() {
+        }
+
+        private String getGamePoints() {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
 
