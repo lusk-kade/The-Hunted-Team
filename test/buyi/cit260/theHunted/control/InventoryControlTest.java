@@ -189,7 +189,7 @@ public class InventoryControlTest {
     
     
     
-    
+    /*
     @Test
     public void testCalcPurchase(){
         Inventory item;
@@ -267,4 +267,5 @@ public class InventoryControlTest {
         ret = InventoryControl.calcPurchase(item, amount);
         assertEquals(expectedReturn, ret, 0.01);
     }
+*/
 }

@@ -18,7 +18,7 @@ public class Scene implements Serializable{
             private String description ;
             private boolean blocked ;
             private String symbol ;
-            private Inventory[] inventory;
+            private Inventory inventory;
             private Question[] question;
             private Animal animal;
 
@@ -60,11 +60,11 @@ public class Scene implements Serializable{
         this.symbol = symbol;
     }
 
-    public Inventory[] getInventory() {
+    public Inventory getInventory() {
         return inventory;
     }
 
-    public void setInventory(Inventory[] inventory) {
+    public void setInventory(Inventory inventory) {
         this.inventory = inventory;
     }
 

@@ -5,6 +5,10 @@
  */
 package byui.cit260.theHunted.view;
 
+import byui.cit1260.theHunted.model.Inventory;
+import java.util.ArrayList;
+import thehunted.TheHunted;
+
 /**
  *
  * @author Robert
@@ -13,17 +17,20 @@ public class InventoryView extends View {
     
     public InventoryView() {
         
-        super ("\n"
-              + "\n-------------------------------------"
-              + "\n|        Choose Your Gear           |"
-              + "\n-------------------------------------"
-              + "\nR - Rope"
-              + "\nW - Water"
-              + "\nF - Food"
-              + "\nQ - Quit"
-              + "\n-------------------------------------");
+        super ("");
     }
-    
+    @Override
+    public void display() {
+    ArrayList<Inventory> backpack = TheHunted.getCurrentGame().getBackpack();
+    int total = 0;
+    // add a heading here.
+    for(Inventory item:backpack) {
+        System.out.println(total + ". " + item.getName());
+        total++;
+    }
+     System.out.println("Total items in the backpack = "+ total);   
+            
+    }
     @Override
     public boolean doAction(String value) {
         

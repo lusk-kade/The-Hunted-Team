@@ -6,9 +6,12 @@
 package byui.cit260.theHunted.view;
 
 import buyi.cit260.theHunted.control.GameControl;
+import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
+import java.util.ArrayList;
 import java.util.Scanner;
 import thehunted.TheHunted;
 
@@ -30,7 +33,8 @@ public class GameMenuView extends View {
                         + "\nM - Move to new location             "
                         + "\nT - Select Terrain                   " 
                         + "\nA - View Ammo                        " 
-                        + "\nW - Select Weapon                    " 
+                        + "\nW - Select Weapon                    "
+                        + "\nI - Pick up item                     "
                         + "\nD - Select Desired Animal            " 
                         + "\nU - Use Weapon                       "   
                         + "\nR - Retrieve Animal                  " 
@@ -64,6 +68,9 @@ public class GameMenuView extends View {
                 break;
             case "W": // Select your weapon
                 this.selectWeapon();
+                break;
+            case "I": 
+                this.pickUpItem();
                 break;
             case "D": // Select the desired animal
                 this.selectDesiredAnimal();
@@ -151,6 +158,12 @@ public class GameMenuView extends View {
      System.out.println("|");
     }
     System.out.println("You are currently at "+ map.getCurrentScene().getDescription());
+    
+    if(map.getCurrentScene().getAnimal().ordinal() != Animal.noAnimal.ordinal())
+        System.out.println("There is a "+ map.getCurrentScene().getAnimal().name() + " near by.");
+    
+    if(map.getCurrentScene().getInventory()!= null)
+        System.out.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
  }
     private void selectTerrain() {
         System.out.println("*** selectTerrain function called ***");
@@ -192,6 +205,19 @@ public class GameMenuView extends View {
         MoveView moveView = new MoveView();
         moveView.display();
         viewMap();
+    }
+
+    private void pickUpItem() {
+        Map map = TheHunted.getCurrentGame().getMap();
+        if(map.getCurrentScene().getInventory()!= null) {
+          ArrayList<Inventory> backpack = TheHunted.getCurrentGame().getBackpack();
+          backpack.add(map.getCurrentScene().getInventory());
+          map.getCurrentScene().setInventory(null);
+        }
+        else {
+            System.out.println("There are no items here!");
+        }
+            
     }
 
 

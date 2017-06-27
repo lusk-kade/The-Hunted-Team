@@ -7,6 +7,7 @@ package byui.cit1260.theHunted.model;
 
 import buyi.cit260.theHunted.control.GameControl;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -18,10 +19,16 @@ public class Game implements Serializable {
    private Player player;
    private Map map;
    private Inventory[] inventory;
+   private ArrayList<Inventory> backpack;
 
    
    
    public Game() {
+       backpack = new ArrayList<Inventory>();
+    }
+
+    public ArrayList<Inventory> getBackpack() {
+        return backpack;
     }
 
  
@@ -89,10 +96,6 @@ public class Game implements Serializable {
             return false;
         }
         return true;
-    }
-
-    public void setInventory(GameControl.Inventory[] inventoryList) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     

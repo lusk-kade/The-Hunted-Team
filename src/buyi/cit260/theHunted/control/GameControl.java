@@ -7,6 +7,8 @@ package buyi.cit260.theHunted.control;
 
 import byui.cit1260.theHunted.model.Game;
 import byui.cit1260.theHunted.model.Inventory;
+import byui.cit1260.theHunted.model.InventoryItemType;
+import byui.cit1260.theHunted.model.InventoryType;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
@@ -43,8 +45,8 @@ public class GameControl {
         
         game.setPlayer(player);
         
-        //Inventory[] inventoryList = GameControl.createInventoryList();
-        //game.setInventory(inventoryList);
+        Inventory[] inventoryList = createInventoryList();
+        game.setInventory(inventoryList);
         
         Map map = MapControl.createMap();
         game.setMap(map);
@@ -53,14 +55,62 @@ public class GameControl {
     }
 
     private static Inventory[] createInventoryList() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Inventory[] inventory = new Inventory[10];
+        Inventory item = new Inventory();
+        item.setInventoryType(InventoryType.weapon);
+        item.setName("Knife");
+        inventory[InventoryItemType.knife.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.weapon);
+        item.setName("Shotgun");
+        inventory[InventoryItemType.shotgun.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.weapon);
+        item.setName("Rifle");
+        inventory[InventoryItemType.rifle.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.weapon);
+        item.setName("Bow");
+        inventory[InventoryItemType.bow.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.weapon);
+        item.setName("Pistol");
+        inventory[InventoryItemType.pistol.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.water);
+        item.setName("Canteen");
+        inventory[InventoryItemType.canteen.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.food);
+        item.setName("MRE");
+        inventory[InventoryItemType.mre.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.food);
+        item.setName("Crackers");
+        inventory[InventoryItemType.crackers.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.food);
+        item.setName("Cookies");
+        inventory[InventoryItemType.cookies.ordinal()] = item;
+        
+        item = new Inventory();
+        item.setInventoryType(InventoryType.food);
+        item.setName("Jerky");
+        inventory[InventoryItemType.jerky.ordinal()] = item;
+        
+        
+        
+        return inventory;
     }
-
-    public static class Inventory {
-
-        public Inventory() {
-        }
-    }
+    
 
 
     

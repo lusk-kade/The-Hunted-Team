@@ -23,7 +23,8 @@ public class Inventory implements Serializable{
     
     
     // class instance variables
-    private String inventoryType;
+    private InventoryType inventoryType;
+    private String name;
     private int quantityInStock;
     private int requiredAmount;
     private double unitPrice;
@@ -46,12 +47,20 @@ public class Inventory implements Serializable{
         this.unitPrice = unitPrice;
     }
 
+    public String getName() {
+        return name;
+    }
 
-    public String getInventoryType() {
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    public InventoryType getInventoryType() {
         return inventoryType;
     }
 
-    public void setInventoryType(String inventoryType) {
+    public void setInventoryType(InventoryType inventoryType) {
         this.inventoryType = inventoryType;
     }
 
