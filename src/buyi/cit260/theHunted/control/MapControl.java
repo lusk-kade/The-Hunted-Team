@@ -266,9 +266,6 @@ public static void movePlayer(Map map, int row, int column) {
  
 }
 
-
-
-
 }
 
 
