@@ -6,6 +6,7 @@
 package buyi.cit260.theHunted.control;
 
 import byui.cit1260.theHunted.model.Inventory;
+import byui.cit260.theHunted.exceptions.InventoryControlException;
 import java.util.ArrayList;
 
 /**
@@ -18,7 +19,7 @@ public class InventoryControl {
     private double gamePoints;
 
 
-  public double calcAnimalPoints(String animalName, double animalWeight){
+  public double calcAnimalPoints(String animalName, double animalWeight) throws InventoryControlException{
 
        double pointScalar = .1;
 
@@ -36,25 +37,26 @@ public class InventoryControl {
             nameValue = 200;
             break;
            default:
-            return -2; //System.out.println("\n*** Invalide animal name *** Try again");
+            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
        }
        
        if ("rabbit".equals(animalName) & (animalWeight > 15 || animalWeight < 3)) {
-           return -1;
+           
        }
        
        if ("deer".equals(animalName) & (animalWeight > 450 || animalWeight < 400)) {
-           return -1;
+           
        }
 
         double points = (animalWeight * nameValue) / pointScalar;
-                gamePoints = points;
-                return points;
+           return gamePoints = points;
+            
   }
   
-  
+        
  
   public void addTotalPoints(ArrayList<Total> gamePoints) {
+      
       
       for (int i = 0; i <gamePoints.size(); i++) {
           
