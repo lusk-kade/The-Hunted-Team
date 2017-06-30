@@ -12,6 +12,7 @@ import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Scene;
 import byui.cit1260.theHunted.model.SceneType;
+import byui.cit260.theHunted.exceptions.MapControlException;
 import thehunted.TheHunted;
 
 /**
@@ -255,10 +256,27 @@ public class MapControl {
     }
     public static void movePlayerToStartingLocation(Map map) {
      // If starting location is not supposed to be 0,0 then use the correct values here.
-     movePlayer(map, 0, 0); // or instead of 0,0 you can select a different starting location
+     try {
+         movePlayer(map, 0, 0);
+     } // or instead of 0,0 you can select a different starting location
+     catch(MapControlException me) {
+         // We need to fix this area. Something is messed up here.
+     }
 }
 
-public static void movePlayer(Map map, int row, int column) {
+public static void movePlayer(Map map, int row, int column) throws MapControlException {
+    
+    if(map == null) {
+        throw new MapControlException("\nMap is not initialized");        
+    }
+    
+    if(row < 0 || row >= map.getRowCount()){
+        throw new MapControlException("\nRow is out of range");
+    }
+    
+    if(column < 0 || column >= map.getColumnCount()){
+        throw new MapControlException("\nColumn is out of range");
+    }
    map.setCurrentLocation(map.getLocations()[row][column]);
    map.getCurrentLocation().setVisited(true);
    map.setCurrentRow(row);

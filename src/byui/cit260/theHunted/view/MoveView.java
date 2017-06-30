@@ -9,6 +9,7 @@ import byui.cit1260.theHunted.model.Game;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import buyi.cit260.theHunted.control.MapControl;
+import byui.cit260.theHunted.exceptions.MapControlException;
 import thehunted.TheHunted;
 
 /**
@@ -33,7 +34,13 @@ public MoveView() {
           for (int column = 0; column < locations[row].length; column++) {
                if (locations[row][column].getScene() != null) {               
                     if (mapOption.equals(locations[row][column].getScene().getSymbol())) {
-                         MapControl.movePlayer(map, row, column);
+                         try {
+                             MapControl.movePlayer(map, row, column);
+                         }
+                         catch(MapControlException me){
+                             System.out.println(me.getMessage());
+                             return false;
+                         }
                          return true;
                     }
                  }

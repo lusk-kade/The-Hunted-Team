@@ -77,13 +77,13 @@ public class InventoryControl {
   
   
   
-  static public double calcPurchase(Inventory item, double amount) {
+  static public double calcPurchase(Inventory item, double amount) throws InventoryControlException {
 
         double taxRate = .08;
 
         if ("weapons".equals(item.getInventoryType())){
             if (amount <= 0) 
-                return -1;
+                throw new InventoryControlException("\nYou need at least 1 weapon.");
             else if(amount > 3)
                 return -1;
         }
