@@ -20,6 +20,7 @@ public class Game implements Serializable {
    private Map map;
    private Inventory[] inventory;
    private ArrayList<Inventory> backpack;
+   private Animal animal;
 
    
    
@@ -96,6 +97,10 @@ public class Game implements Serializable {
             return false;
         }
         return true;
+    }
+
+    public Animal getAnimal() {
+        return animal;
     }
 
     

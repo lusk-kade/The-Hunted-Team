@@ -161,6 +161,9 @@ public class GameMenuView extends View {
     
     if(map.getCurrentScene().getAnimal().ordinal() != Animal.noAnimal.ordinal())
         System.out.println("There is a "+ map.getCurrentScene().getAnimal().name() + " near by.");
+        
+    if(map.getCurrentScene().getAnimal().ordinal() != Animal.noAnimal.ordinal())
+        huntingView();
     
     if(map.getCurrentScene().getInventory()!= null)
         System.out.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
@@ -218,6 +221,11 @@ public class GameMenuView extends View {
             System.out.println("There are no items here!");
         }
             
+    }
+
+    private void huntingView() {
+        HuntingView huntingView = new HuntingView();
+        huntingView.display();
     }
 
 
