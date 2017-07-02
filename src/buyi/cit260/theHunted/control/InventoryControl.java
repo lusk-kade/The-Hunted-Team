@@ -41,11 +41,11 @@ public class InventoryControl {
        }
        
        if ("rabbit".equals(animalName) & (animalWeight > 15 || animalWeight < 3)) {
-           
+            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
        }
        
        if ("deer".equals(animalName) & (animalWeight > 450 || animalWeight < 400)) {
-           
+            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
        }
 
         double points = (animalWeight * nameValue) / pointScalar;
@@ -53,7 +53,7 @@ public class InventoryControl {
             
   }
   
-        
+       
  
   public void addTotalPoints(ArrayList<Total> gamePoints) {
       

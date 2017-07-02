@@ -30,7 +30,7 @@ public class MapControl {
        
        return map;
     }
-    private static Scene[] createScenes() {
+    public static Scene[] createScenes() {
         Inventory[] inventory = TheHunted.getCurrentGame().getInventory();
         Scene[] scenes = new Scene[SceneType.values().length];
         
@@ -89,7 +89,7 @@ public class MapControl {
         currentScene.setSymbol("GR");
         currentScene.setDescription("Green River!");
         currentScene.setInventory(inventory[InventoryItemType.shotgun.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
+        currentScene.setAnimal(Animal.rabbit);
         scenes[SceneType.greenRiver.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         

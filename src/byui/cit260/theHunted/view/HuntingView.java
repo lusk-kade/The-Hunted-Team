@@ -6,12 +6,18 @@
 package byui.cit260.theHunted.view;
 
 
+import byui.cit1260.theHunted.model.Animal;
+import static byui.cit1260.theHunted.model.Animal.bear;
+import static byui.cit1260.theHunted.model.Animal.rabbit;
+import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.Map;
 import java.io.BufferedReader;
 import java.io.PrintWriter;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import thehunted.TheHunted;
 
 /**
  *
@@ -21,35 +27,21 @@ public class HuntingView extends View {
     
 
 
-    
-/*    
-    public HuntingView() {
-        
-        this.promptMessage = "\nYou are feeling lucky";
-        try {
-            TimeUnit.SECONDS.sleep(90);
-        } catch (InterruptedException ex) {
-            Logger.getLogger(HuntingView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        // display the banner when view is created
-        this.displayBanner();
-        
-    }    
-  */  
+ 
     
     public HuntingView() {
-    
+
          super ( "\n***********************************"
                + "\n*                                 *"
-               + "\n* You have been quiet and ready   *"
-               + "\n* to hunt. This area is known to  *"
-               + "\n* be the place where the most     *"
-               + "\n* animals are spoted.  *"
-               + "\n*                                 *"
-               + "\n* Be ready at any moment, you     *"
-               + "\n* never know when an animal will  *"
-               + "\n* appear!                         *"
-               + "\n*                                 *"
+               + "\n* As you may have noticed there   *"
+               + "\n* is an animal near by and it is  *"
+               + "\n* time to hunt.                   *"
+               + "\n*                                 *"                 
+               + "\n***********************************"
+               + "\n                                   "
+               + "\n F - Will fire your weapon         "
+               + "\n S - Will skip this shot           "
+               + "\n                                   "                 
                + "\n***********************************"); 
          
          
@@ -64,8 +56,8 @@ public class HuntingView extends View {
             case "F":
                 this.fireWeapon();
                 break;
-            case "N":
-                this.fireWeapon();
+            case "S":
+                this.skipShot();
                 break;
             default:
                 System.out.println("\n*** Invalid Selection *** Try again");
@@ -76,7 +68,21 @@ public class HuntingView extends View {
     }
 
     private void fireWeapon() {
-        // May call the CalcAnimalPoints or Another View - Not sure yet
+        Game game = TheHunted.getCurrentGame();
+        Animal animal = game.getAnimal();
+        
+        System.out.println("\n*** Good Shot! You aimed, fired, and have now collected your kill ***");
+        
+        if (animal == rabbit);
+            System.out.println("Your rabbit weighs 6 pounds.");
+        
+       // if(buyi.cit260.theHunted.control.MapControl.createMap().getCurrentScene().getAnimal().ordinal() == Animal.rabbit.ordinal());
+       
+    }
+
+    private void skipShot() {
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 
     
