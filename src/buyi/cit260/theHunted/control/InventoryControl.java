@@ -85,14 +85,14 @@ public class InventoryControl {
             if (amount <= 0) 
                 throw new InventoryControlException("\nYou need at least 1 weapon.");
             else if(amount > 3)
-                return -1;
+                throw new InventoryControlException("\nYou have too many weapons.");;
         }
         
         if ("ammo".equals(item.getInventoryType())) {
             if (amount <= 0) 
                 return -1;
             else if(amount > 10)
-                return -1;
+                throw new InventoryControlException("\nToo much gear will weigh you down.");;
         }
         if ("gear".equals(item.getInventoryType())) {
             if (amount <= 0) 
