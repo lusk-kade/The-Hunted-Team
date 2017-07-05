@@ -7,6 +7,7 @@ package byui.cit1260.theHunted.model;
 
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -21,6 +22,8 @@ public class Scene implements Serializable{
             private Inventory inventory;
             private Question[] question;
             private Animal animal;
+            private ArrayList<Inventory> storeStock;
+            private boolean store;
 
     public Scene() {
         animal = Animal.noAnimal;
@@ -34,7 +37,23 @@ public class Scene implements Serializable{
         this.animal = animal;
     }
 
-            
+    public ArrayList<Inventory> getStoreStock() {
+        return storeStock;
+    }
+
+    public void setStoreStock(ArrayList<Inventory> storeStock) {
+        this.storeStock = storeStock;
+    }
+
+    public boolean isStore() {
+        return store;
+    }
+
+    public void setStore(boolean store) {
+        this.store = store;
+    }
+
+          
                        
     public String getDescription() {
         return description;

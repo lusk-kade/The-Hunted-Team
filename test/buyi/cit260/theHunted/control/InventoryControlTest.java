@@ -6,6 +6,9 @@
 package buyi.cit260.theHunted.control;
 
 import byui.cit1260.theHunted.model.Inventory;
+import byui.cit260.theHunted.exceptions.InventoryControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -22,7 +25,7 @@ public class InventoryControlTest {
      * Test of calcAnimalPoints method, of class InventoryControl.
      */
     @Test
-    public void testCalcAnimalPoints() {
+    public void testCalcAnimalPoints() throws InventoryControlException {
         System.out.println("calcAnimalPoints");
         
         /************************
@@ -63,7 +66,12 @@ public class InventoryControlTest {
         double expResult = -1;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
@@ -86,7 +94,12 @@ public class InventoryControlTest {
         double expResult = -1;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
@@ -109,7 +122,12 @@ public class InventoryControlTest {
         double expResult = 17500;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
@@ -133,7 +151,12 @@ public class InventoryControlTest {
         double expResult = 332000;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
@@ -155,7 +178,12 @@ public class InventoryControlTest {
         double expResult = -1;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);
@@ -178,7 +206,12 @@ public class InventoryControlTest {
         double expResult = -1;
         
         // Call function to run test
-        double result = instance.calcAnimalPoints(name, weight);
+        double result = 0;
+        try {
+            result = instance.calcAnimalPoints(name, weight);
+        } catch (InventoryControlException ex) {
+            Logger.getLogger(InventoryControlTest.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Actual return - compare to expected return
         assertEquals(expResult, result, 0.0);

@@ -17,8 +17,10 @@ public class Player implements Serializable {
     private String name ;
     private double highScore;
     private Actor actor;
+    private double cash;
 
     public Player() {
+        cash = 200;
     }
     
     
@@ -46,6 +48,15 @@ public class Player implements Serializable {
     public void setActor(Actor actor) {
         this.actor = actor;
     }  
+
+    public double getCash() {
+        return cash;
+    }
+
+    public void setCash(double cash) {
+        this.cash = cash;
+    }
+    
     
     @Override
     public int hashCode() {

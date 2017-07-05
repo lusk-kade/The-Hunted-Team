@@ -62,15 +62,7 @@ public int getIntInput(String prompt) {
 
 public boolean doAction(int row, int column) {
     System.out.println("You entered row: " + row + " and column: " + column);
-    /*switch (choice) {
-        case "A": // create and choose Arizona
-            this.displayNewLocationView();
-            break;
-        case "U": // create and choose Utah
-            this.displayNewLocationView();
-            break;
-            
-    }*/
+    
     return true;
 }
 

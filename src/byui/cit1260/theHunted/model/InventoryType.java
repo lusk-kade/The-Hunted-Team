@@ -7,11 +7,13 @@ package byui.cit1260.theHunted.model;
 
 /**
  *
- * @author palme
+ * @author Robert
  */
 public enum InventoryType {
     
     weapon,
     food,
+    ammo,
+    clothing,
     water;
 }

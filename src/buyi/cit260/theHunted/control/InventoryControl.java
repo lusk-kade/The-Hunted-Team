@@ -85,23 +85,23 @@ public class InventoryControl {
             if (amount <= 0) 
                 throw new InventoryControlException("\nYou need at least 1 weapon.");
             else if(amount > 3)
-                throw new InventoryControlException("\nYou have too many weapons.");;
+                throw new InventoryControlException("\nYou have too many weapons.");
         }
         
-        if ("ammo".equals(item.getInventoryType())) {
-            if (amount <= 0) 
-                return -1;
+        if("ammo".equals(item.getInventoryType())) {
+            if(amount <= 0) 
+                throw new InventoryControlException("\nYou will need ammo to actually hunt.");
             else if(amount > 10)
-                throw new InventoryControlException("\nToo much gear will weigh you down.");;
+                throw new InventoryControlException("\nToo much gear will weigh you down.");
         }
-        if ("gear".equals(item.getInventoryType())) {
-            if (amount <= 0) 
-                return -1;
+        if("gear".equals(item.getInventoryType())) {
+            if(amount <= 0) 
+                throw new InventoryControlException("\nYou will need some gear for your survival.");
             else if(amount > 10)
-                return -1;
+                throw new InventoryControlException("\nToo much gear will weigh you down.");
         }
         if (item.getUnitPrice() <= 0) {
-            return -2;
+            throw new InventoryControlException("\nThere is nothing free here!");
         }
         double cost = (item.getUnitPrice() * amount);
         double tax = cost * taxRate;

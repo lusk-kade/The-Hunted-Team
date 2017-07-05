@@ -34,12 +34,11 @@ public class GameMenuView extends View {
                         + "\nT - Select Terrain                   " 
                         + "\nA - View Ammo                        " 
                         + "\nW - Select Weapon                    "
-                        + "\nI - Pick up item                     "
-                        + "\nD - Select Desired Animal            " 
+                        + "\nI - Pick up item                     " 
                         + "\nU - Use Weapon                       "   
                         + "\nR - Retrieve Animal                  " 
                         + "\nP - Player Status                    " 
-                        + "\nG - Choose Gear                      " 
+                        + "\nG - View Gear in Backpack            " 
                         + "\nS - Save Game                        " 
                         + "\nH - Help                             " 
                         + "\nQ - Quit                             "
@@ -72,9 +71,6 @@ public class GameMenuView extends View {
             case "I": 
                 this.pickUpItem();
                 break;
-            case "D": // Select the desired animal
-                this.selectDesiredAnimal();
-                break;
             case "U": // Select the desired animal
                 this.useWeapon();
                 break;
@@ -85,7 +81,7 @@ public class GameMenuView extends View {
                 this.playerStats();
                 break;
             case "G": // Select the desired animal
-                this.chooseGear();
+                this.viewGear();
                 break;
             case "S": // Select the desired animal
                 this.saveGame();
@@ -105,7 +101,6 @@ public class GameMenuView extends View {
 
     private void displayHelpMenu() {
         HelpMenuView helpMenuView = new HelpMenuView();
-        
         helpMenuView.displayHelpMenuView();
     }
 
@@ -181,10 +176,6 @@ public class GameMenuView extends View {
          weaponsView.display();
     }
 
-    private void selectDesiredAnimal() {
-        System.out.println("*** selectDesiredAnimal function called ***");
-    }
-
     private void useWeapon() {
         System.out.println("*** useWeapon function called ***");
     }
@@ -197,7 +188,7 @@ public class GameMenuView extends View {
         System.out.println("*** playerStats function called ***");
     }
 
-    private void chooseGear() {
+    private void viewGear() {
         InventoryView inventoryView = new InventoryView();
         inventoryView.display();
         
@@ -207,6 +198,11 @@ public class GameMenuView extends View {
         viewMap();
         MoveView moveView = new MoveView();
         moveView.display();
+        if(TheHunted.getCurrentGame().getMap().getCurrentScene().isStore()) {
+            StoreView storeView = new StoreView();
+            storeView.display();
+        }
+        else
         viewMap();
     }
 

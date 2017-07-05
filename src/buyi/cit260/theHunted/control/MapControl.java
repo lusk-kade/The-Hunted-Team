@@ -8,11 +8,13 @@ package buyi.cit260.theHunted.control;
 import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.InventoryItemType;
+import byui.cit1260.theHunted.model.InventoryType;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Scene;
 import byui.cit1260.theHunted.model.SceneType;
 import byui.cit260.theHunted.exceptions.MapControlException;
+import java.util.ArrayList;
 import thehunted.TheHunted;
 
 /**
@@ -36,9 +38,26 @@ public class MapControl {
         
         Scene currentScene = new Scene();
         currentScene.setSymbol("ST");
-        currentScene.setDescription("the starting point."
+        currentScene.setDescription("the starting point. This is also "
+                + "where you find a hunting supply store."
                 + " This is where your adventure starts!");
         currentScene.setInventory(inventory[InventoryItemType.canteen.ordinal()]);
+        ArrayList<Inventory> storeStock = new ArrayList<Inventory>();
+        storeStock.add(new Inventory(InventoryType.food, "Crackers", 10, 0, .50));
+        storeStock.add(new Inventory(InventoryType.food, "Cookies", 10, 0, 1.00));
+        storeStock.add(new Inventory(InventoryType.food, "MRE", 10, 0, 5.00));
+        storeStock.add(new Inventory(InventoryType.food, "Jerky", 10, 0, 5.00));
+        storeStock.add(new Inventory(InventoryType.water, "Canteen", 20, 0, 2.00));
+        storeStock.add(new Inventory(InventoryType.ammo, "Shotgun Shells", 50, 0, 50));
+        storeStock.add(new Inventory(InventoryType.ammo, "Arrow", 50, 0, 20));
+        storeStock.add(new Inventory(InventoryType.ammo, "Rifle Ammo", 50, 0, 30));
+        storeStock.add(new Inventory(InventoryType.ammo, "Pistol Ammo", 50, 0, 15));
+        storeStock.add(new Inventory(InventoryType.clothing, "Gloves", 10, 0, 15));
+        storeStock.add(new Inventory(InventoryType.clothing, "Sunglasses", 10, 0, 10));
+        storeStock.add(new Inventory(InventoryType.clothing, "Hat", 10, 0, 20));
+        storeStock.add(new Inventory(InventoryType.clothing, "Ghillie Suit", 5, 0, 100));
+        currentScene.setStoreStock(storeStock);
+        currentScene.setStore(true);
         scenes[SceneType.start.ordinal()] = currentScene;
         
         currentScene = new Scene();

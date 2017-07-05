@@ -7,7 +7,7 @@ package byui.cit1260.theHunted.model;
 
 /**
  *
- * @author palme
+ * @author Robert
  */
 public enum InventoryItemType {
     

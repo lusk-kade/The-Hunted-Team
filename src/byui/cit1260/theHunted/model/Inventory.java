@@ -12,7 +12,7 @@ import java.util.Objects;
 
 /**
  *
- * @author palme
+ * @author Robert
  */
 public class Inventory implements Serializable{
 
@@ -28,6 +28,15 @@ public class Inventory implements Serializable{
     private int quantityInStock;
     private int requiredAmount;
     private double unitPrice;
+
+    public Inventory(InventoryType inventoryType, String name, int quantityInStock, int requiredAmount, double unitPrice) {
+        this.inventoryType = inventoryType;
+        this.name = name;
+        this.quantityInStock = quantityInStock;
+        this.requiredAmount = requiredAmount;
+        this.unitPrice = unitPrice;
+    }
+    
 
     /**
      * Get the value of unitPrice
