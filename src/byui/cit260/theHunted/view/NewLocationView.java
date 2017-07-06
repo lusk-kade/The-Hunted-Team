@@ -10,7 +10,7 @@ import java.util.Scanner;
 /**
  *
  * @author palme
- */
+ 
 public class NewLocationView {
 
     private String location;
@@ -67,3 +67,4 @@ public boolean doAction(int row, int column) {
 }
 
 }
+*/

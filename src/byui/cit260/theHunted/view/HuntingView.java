@@ -60,7 +60,8 @@ public class HuntingView extends View {
                 this.skipShot();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Try again");
                 break;                
         }
         
@@ -71,10 +72,10 @@ public class HuntingView extends View {
         Game game = TheHunted.getCurrentGame();
         Animal animal = game.getAnimal();
         
-        System.out.println("\n*** Good Shot! You aimed, fired, and have now collected your kill ***");
+        this.console.println("\n*** Good Shot! You aimed, fired, and have now collected your kill ***");
         
         if (animal == rabbit);
-            System.out.println("Your rabbit weighs 6 pounds.");
+            this.console.println("Your rabbit weighs 6 pounds.");
         
        // if(buyi.cit260.theHunted.control.MapControl.createMap().getCurrentScene().getAnimal().ordinal() == Animal.rabbit.ordinal());
        

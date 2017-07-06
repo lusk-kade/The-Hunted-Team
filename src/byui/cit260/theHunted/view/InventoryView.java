@@ -25,10 +25,10 @@ public class InventoryView extends View {
     int total = 0;
     // add a heading here.
     for(Inventory item:backpack) {
-        System.out.println(total + ". " + item.getName());
+        this.console.println(total + ". " + item.getName());
         total++;
     }
-     System.out.println("Total items in the backpack = "+ total);   
+     this.console.println("Total items in the backpack = "+ total);   
             
     }
     @Override
@@ -47,7 +47,8 @@ public class InventoryView extends View {
                 this.chooseFood();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Try again");
                 break;
         }
         

@@ -38,7 +38,7 @@ public MoveView() {
                              MapControl.movePlayer(map, row, column);
                          }
                          catch(MapControlException me){
-                             System.out.println(me.getMessage());
+                             this.console.println(me.getMessage());
                              return false;
                          }
                          return true;
@@ -46,7 +46,8 @@ public MoveView() {
                  }
             }
      }
-     System.out.println("\n*** Invalid selection *** Try Again later");
+     ErrorView.display(this.getClass().getName(),
+             "\n*** Invalid selection *** Try Again later");
      return false;
    }
 }

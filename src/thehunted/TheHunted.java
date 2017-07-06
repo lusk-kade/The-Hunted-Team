@@ -16,6 +16,12 @@ import byui.cit1260.theHunted.model.Question;
 import byui.cit260.theHunted.view.StartProgramView;
 import byui.cit260.theHunted.view.MainMenuView;
 import byui.cit260.theHunted.view.GameMenuView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,6 +31,11 @@ public class TheHunted {
     
     private static Game currentGame = null;
     private static Player player = null;
+    
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
 
     public static Game getCurrentGame() {
         return currentGame;
@@ -42,22 +53,85 @@ public class TheHunted {
         TheHunted.player = player;
     }
 
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        TheHunted.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader outFile) {
+        TheHunted.inFile = outFile;
+    }
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        TheHunted.logFile = logFile;
+    }
+
     
     
     
     
-    /**
+    
+    
+     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         
 
         
-    // create StartProgramViewOrig and display the start program view
-    StartProgramView startProgramView = new StartProgramView();
-    startProgramView.displayStartProgramView();
+
         
+        try {
+            
+            TheHunted.inFile = 
+                    new BufferedReader(new InputStreamReader(System.in));
+            
+            TheHunted.outFile = new PrintWriter(System.out, true);
+            
+            //open log file
+            String filePath = "log.txt";
+            TheHunted.logFile = new PrintWriter(filePath);
+            
+                // create StartProgramViewOrig and display the start program view
+                StartProgramView startProgramView = new StartProgramView();
+                startProgramView.displayStartProgramView();
+                
+        }   catch (Throwable e) {
+                
+                System.out.println("Exception: " + e.toString() +
+                                   "\nCause: " + e.getCause() +
+                                   "\nMessage: " + e.getMessage());
+                
+                e.printStackTrace();;
+        }
         
+        finally {
+            try {
+                if (TheHunted.inFile != null)
+                    TheHunted.inFile.close();
+                
+                if (TheHunted.outFile != null);
+                    TheHunted.outFile.close();
+                    
+                if (TheHunted.logFile != null);
+                    TheHunted.logFile.close();    
+            } catch (IOException ex) {
+                System.out.println("Error closing files");
+                return;
+            }
+            
+        }
         
         
         

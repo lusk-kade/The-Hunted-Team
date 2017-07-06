@@ -11,13 +11,13 @@ import java.util.Scanner;
  *
  * @author Justin
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
 
     private String menu;
     
     
     public HelpMenuView() {
-        this.menu= "\n"
+            super ("\n"
                  + "\n-------------------------------"
                  + "\n   Help Menu                  "
                  + "\n-------------------------------"
@@ -27,8 +27,10 @@ public class HelpMenuView {
                  + "\nW - Understanding weapons and use"
                  + "\nL - Understanding locations"
                  + "\nQ - Quit"
-                 + "\n-------------------------------";        
+                 + "\n-------------------------------");        
     }
+    
+
     
     public void displayHelpMenuView() {
         
@@ -45,27 +47,33 @@ public class HelpMenuView {
     }
 
     private String getMenuHelpOption() {
-        Scanner keyboard = new Scanner(System.in);
+        
         String value = "";
         boolean valid = false;
-        
+    try {    
         while (!valid) {
-            System.out.println("\n" + this.menu);
+            this.console.println("\n" + this.menu);
             
-            value = keyboard.nextLine();
+            value = this.keyboard.readLine();
             value = value.trim();
             
             if(value.length() < 1) {
-                System.out.println("\nInvalid value; value can't be blank");
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid value; value can't be blank");
                 continue;
                 
             }
             break;
         }
+    } catch (Exception e) {
+        ErrorView.display(this.getClass().getName(),
+                "Error reading input: " + e.getMessage());
+    }
         return value;
     }
-
-    private boolean doAction(String menuHelpOption) {
+    
+    @Override
+    public boolean doAction(String menuHelpOption) {
         
         menuHelpOption = menuHelpOption.toUpperCase();
         
@@ -86,7 +94,8 @@ public class HelpMenuView {
                 this.displayLocations();
                 break;
             default:
-                System.out.println("\n*** Invalid selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid selection *** Try again");
                 break;               
         }
         return false;

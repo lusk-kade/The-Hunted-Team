@@ -90,7 +90,8 @@ public class GameMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\n*** Invalid Selection *** Try again");
+                ErrorView.display(this.getClass().getName(),
+                        "\n*** Invalid Selection *** Try again");
                 break;
         }
         
@@ -116,15 +117,15 @@ public class GameMenuView extends View {
   Map map = game.getMap(); // retreive the map from game
   Location[][] locations = map.getLocations(); // retreive the locations from map
     // Build the heading of the map
-    System.out.print("  |");
+    this.console.print("  |");
     for( int column = 0; column < locations[0].length; column++){
       // print col numbers to side of map
-      System.out.print("  " + column + " |"); 
+      this.console.print("  " + column + " |"); 
     }
     // Now build the map.  For each row, show the column information
-    System.out.println();
+    this.console.println();
     for( int row = 0; row < locations.length; row++){
-     System.out.print(row + " "); // print row numbers to side of map
+     this.console.print(row + " "); // print row numbers to side of map
       for( int column = 0; column < locations[row].length; column++){
         // set default indicators as blanks
         leftIndicator = " ";
@@ -139,29 +140,29 @@ public class GameMenuView extends View {
            leftIndicator = ">"; // can be stars or whatever these are indicators showing visited
            rightIndicator = "<"; // same as above
         }
-       System.out.print("|"); // start map with a |
+       this.console.print("|"); // start map with a |
         if(locations[row][column].getScene() == null)
         {
              // No scene assigned here so use ?? for the symbol
-             System.out.print(leftIndicator + "??" + rightIndicator);
+             this.console.print(leftIndicator + "??" + rightIndicator);
         }
         else
-          System.out.print(leftIndicator
+          this.console.print(leftIndicator
              + locations[row][column].getScene().getSymbol()
              + rightIndicator);
       }
-     System.out.println("|");
+     this.console.println("|");
     }
-    System.out.println("You are currently at "+ map.getCurrentScene().getDescription());
+    this.console.println("You are currently at "+ map.getCurrentScene().getDescription());
     
     if(map.getCurrentScene().getAnimal().ordinal() != Animal.noAnimal.ordinal())
-        System.out.println("There is a "+ map.getCurrentScene().getAnimal().name() + " near by.");
+        this.console.println("There is a "+ map.getCurrentScene().getAnimal().name() + " near by.");
         
     if(map.getCurrentScene().getAnimal().ordinal() != Animal.noAnimal.ordinal())
         huntingView();
     
     if(map.getCurrentScene().getInventory()!= null)
-        System.out.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
+        this.console.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
  }
     private void selectTerrain() {
         System.out.println("*** selectTerrain function called ***");
@@ -214,7 +215,7 @@ public class GameMenuView extends View {
           map.getCurrentScene().setInventory(null);
         }
         else {
-            System.out.println("There are no items here!");
+            this.console.println("There are no items here!");
         }
             
     }

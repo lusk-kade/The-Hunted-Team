@@ -24,16 +24,16 @@ public class StoreView extends View {
         // Add Try...Catch to protect this function.
         //try {
         if(itemIndex < 0 || itemIndex >= stock.size()) {
-            System.out.println("Enter a valid number.");
+            this.console.println("Enter a valid number.");
         } /*catch (InventoryControlException ex) {
                System.out.println("***Invalid entry***"); 
                 } */
         Inventory item = stock.get(itemIndex);
-        System.out.println(item.getName());
+        this.console.println(item.getName());
         
         // Check to see if the item quantity in stock is > 0.
         if(stock.size() > 0) {
-            System.out.println("We have that item in stock");
+            this.console.println("We have that item in stock");
             return false;
         }
             
