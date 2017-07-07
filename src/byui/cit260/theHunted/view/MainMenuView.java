@@ -41,7 +41,7 @@ public class MainMenuView extends View {
                 this.startNewGame();
                 break;
             case "G": // get and start an existing game
-                this.startExistingGame();
+                this.startSavedGame();
                 break;
             case "H": // display the help menu
                 this.displayHelpMenu();
@@ -70,8 +70,22 @@ public class MainMenuView extends View {
         gameMenuView.display();
     }
 
-    private void startExistingGame() {
-         System.out.println("*** startExistingGame function called ***");
+    private void startSavedGame() {
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file name of the"
+                + "saved game.");
+        String filePath = this.getInput();
+        
+        try {
+            //save a saved game
+            GameControl.getSavedGame(filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
+        // display the game menu
+        GameMenuView gameMenuView = new GameMenuView();
+        gameMenuView.display();
     }
 
     private void displayHelpMenu() {
@@ -81,6 +95,17 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file name to save the game"
+                + "** example Save.txt. **");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(TheHunted.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        
     }   
 }

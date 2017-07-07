@@ -14,6 +14,11 @@ import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Player;
 import byui.cit1260.theHunted.model.Scene;
 import byui.cit1260.theHunted.model.SceneType;
+import byui.cit260.theHunted.exceptions.GameControlException;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import thehunted.TheHunted;
 
 /**
@@ -143,5 +148,34 @@ public class GameControl {
         locations[4][3].setScene(scenes[SceneType.yosemiteForest.ordinal()]);
         locations[4][4].setScene(scenes[SceneType.finish.ordinal()]);
     }
-    
+
+    public static void saveGame(Game game, String filePath)
+            throws GameControlException {
+        
+        try( FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game); // write the game object out to file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
+
+    public static void getSavedGame(String filePath) 
+            throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filePath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject(); // read the game object from file
+        }
+        catch(Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+        
+        // close the output file
+        TheHunted.setCurrentGame(game); // save in TheHunted
+    }
 }

@@ -11,6 +11,9 @@ import byui.cit1260.theHunted.model.Game;
 import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
+import byui.cit260.theHunted.exceptions.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 import thehunted.TheHunted;
@@ -106,9 +109,20 @@ public class GameMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("*** saveGame function called ***");
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file name to save the game"
+                + "** example Save.txt **");
+        String filePath = this.getInput();
+        
+        try {
+            //save the game to the specified file
+            GameControl.saveGame(TheHunted.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
-
+    
+    
     public void viewMap() {
   String leftIndicator;
   String rightIndicator;
