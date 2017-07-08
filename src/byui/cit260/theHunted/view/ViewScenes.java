@@ -5,7 +5,10 @@
  */
 package byui.cit260.theHunted.view;
 
+import buyi.cit260.theHunted.control.GameControl;
+import byui.cit1260.theHunted.model.Scene;
 import java.util.Scanner;
+import thehunted.TheHunted;
 
 /**
  * @author justin
@@ -15,12 +18,12 @@ public class ViewScenes extends View {
 
    
    public ViewScenes() {   
-    System.out.println(
+    this.console.println(
             "\n ST"
             + "the starting point. This is also "
             + "where you find a hunting supply store."
             + " This is where your adventure starts!"
-            + "\n"
+            + "\n "
             + "BR"
             + "Black River. The water is extremely cold."
             + " Brrrrrr!"
@@ -107,9 +110,21 @@ public class ViewScenes extends View {
  
     @Override
     public boolean doAction(String value) {
-        GameMenuView gameMenuView = new GameMenuView();
-        gameMenuView.display();
-        return false;
+    
+    
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nEnter the file name to save the game"
+                + "** example Save.txt **");
+        String filePath = this.getInput();
+        
+        try {
+            Scene scene = null;
+            //save the game to the specified file
+            GameControl.viewScenes(scene, filePath);
+        } catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
+        return true;
     }
     
 }
