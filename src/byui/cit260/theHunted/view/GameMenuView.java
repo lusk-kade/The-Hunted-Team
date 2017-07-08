@@ -86,6 +86,9 @@ public class GameMenuView extends View {
             case "G": // Select the desired animal
                 this.viewGear();
                 break;
+            case "E": // Select the desired animal
+                this.viewScenes();
+                break;                
             case "S": // Select the desired animal
                 this.saveGame();
                 break;
@@ -238,6 +241,12 @@ public class GameMenuView extends View {
         HuntingView huntingView = new HuntingView();
         huntingView.display();
     }
+
+    private void viewScenes() {
+        ViewScenes viewScenes = new ViewScenes();
+        viewScenes.display();
+    }
+        
 
 
 
