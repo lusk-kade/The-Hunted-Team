@@ -5,6 +5,7 @@
  */
 package byui.cit260.theHunted.view;
 
+import buyi.cit260.theHunted.control.GameControl;
 import byui.cit1260.theHunted.model.Inventory;
 import java.util.ArrayList;
 import thehunted.TheHunted;
@@ -20,29 +21,65 @@ public class StoreView extends View {
         //throw new UnsupportedOperationException("Not supported yet."); 
         
         ArrayList<Inventory> stock = TheHunted.getCurrentGame().getMap().getCurrentScene().getStoreStock();
-        int itemIndex = Integer.parseInt(value);
+        int itemIndex = 0;
+        
+        try {
+            
+            itemIndex = Integer.parseInt(value);
+        }
+        catch(NumberFormatException nfe) {
+            
+            this.console.println("You must enter a valid number, or 'Q' to quit.");
+            return false;
+        }
         // Add Try...Catch to protect this function.
-        //try {
         if(itemIndex < 0 || itemIndex >= stock.size()) {
             this.console.println("Enter a valid number.");
-        } /*catch (InventoryControlException ex) {
-               System.out.println("***Invalid entry***"); 
-                } */
+            return false;
+        }
         Inventory item = stock.get(itemIndex);
-        this.console.println(item.getName());
+        // this.console.println(item.getName());
         
         // Check to see if the item quantity in stock is > 0.
-        if(stock.size() > 0) {
-            this.console.println("We have that item in stock");
+        if(stock.size() <= 0) {
+            this.console.println("Sorry! We do not have that item in stock");
             return false;
         }
             
         // Prompt for how many the user wants.
+        displayMessage = "How many " + item.getName() +
+                " would you like to purchase? There are " + item.getQuantityInStock() +
+                " available.";
         
+        String sQuantity = getInput();
+        getStockMessage();
+        int quantity = 0;
+         try {
+            
+            quantity = Integer.parseInt(sQuantity);
+        }
+        catch(NumberFormatException nfe) {
+            
+            this.console.println("You must enter a valid number, or 'Q' to quit.");
+            return false;
+        }
         // Check to see if the user has any of these items in the backpack.
-        // Check 
+        if(quantity <= 0 || quantity > item.getQuantityInStock()) {
+            this.console.println("Sorry! This is an invalid request.");
+            return false;
+        }
+        // Check to see if quantity * item.unitPrice < moneyInWallet
+        double playerCash = TheHunted.getCurrentGame().getPlayer().getCash();
+        if(quantity * item.getUnitPrice() > playerCash) {
+            this.console.println("Sorry! You don't have enough money. You currently have $" + playerCash);
+            return false;
+        }
+        TheHunted.getCurrentGame().getPlayer().setCash(playerCash - (quantity * item.getUnitPrice()));
+        GameControl.addToBackPack(item, quantity);
+        getStockMessage();
         return false;
     }
+    
 
     public StoreView() {
         super("");
@@ -68,6 +105,7 @@ public class StoreView extends View {
             count++;
             
         }
+        displayMessage += "You currently have $" + TheHunted.getCurrentGame().getPlayer().getCash();
         displayMessage += "\n\rEnter the item you would like to purchase. (Press 'Q' to quit.)";
         
     }

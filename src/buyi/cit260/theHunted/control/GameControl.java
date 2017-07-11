@@ -19,6 +19,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import thehunted.TheHunted;
 
 /**
@@ -179,7 +180,32 @@ public class GameControl {
         TheHunted.setCurrentGame(game); // save in TheHunted
     }
     
-        public static void viewScenes(Scene scene, String filePath)
+    public static void addToBackPack(Inventory item, int quantity) {
+          ArrayList<Inventory> backpack = TheHunted.getCurrentGame().getBackpack();
+          // Check to see if the item is already in the backpack
+          Inventory backPackItem = null;
+          for(Inventory currentItem: backpack) {
+              if(currentItem.getName() == item.getName()) {
+                  backPackItem = item;
+                  break;
+              }
+          }
+          if(backPackItem == null) {
+              backPackItem = new Inventory();
+              backPackItem.setName(item.getName());
+              backPackItem.setInventoryType(item.getInventoryType());
+              backPackItem.setQuantityInStock(quantity);
+              backpack.add(backPackItem);
+              item.setQuantityInStock(item.getQuantityInStock() - quantity);
+          }
+          else {
+              backPackItem.setQuantityInStock(backPackItem.getQuantityInStock() + quantity);
+              item.setQuantityInStock(item.getQuantityInStock() - quantity);
+          }
+            
+    }
+    
+            public static void viewScenes(Scene scene, String filePath)
             throws GameControlException {
         
         try( FileOutputStream fops = new FileOutputStream(filePath)) {
@@ -191,5 +217,4 @@ public class GameControl {
             throw new GameControlException(e.getMessage());
         }
     }
-    
 }
