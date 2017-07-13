@@ -12,8 +12,11 @@ import byui.cit1260.theHunted.model.Inventory;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit260.theHunted.exceptions.GameControlException;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 import thehunted.TheHunted;
@@ -34,7 +37,7 @@ public class GameMenuView extends View {
                         + "\n*************************************"
                         + "\nV - View Map                         " 
                         + "\nM - Move to new location             "
-                        + "\nT - Select Terrain                   " 
+                        + "\nZ - Print Inventory Report           " 
                         + "\nA - View Ammo                        " 
                         + "\nW - Select Weapon                    "
                         + "\nI - Pick up item                     " 
@@ -63,8 +66,8 @@ public class GameMenuView extends View {
             case "M": // View the map
                 this.movePlayer();
                 break;
-            case "T": // Select the terrain
-                this.selectTerrain();
+            case "Z": // Print a character stream report.
+                this.printInventoryReport();
                 break;
             case "A": // View the ammo
                 this.viewAmmo();
@@ -182,9 +185,6 @@ public class GameMenuView extends View {
     if(map.getCurrentScene().getInventory()!= null)
         this.console.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
  }
-    private void selectTerrain() {
-        System.out.println("*** selectTerrain function called ***");
-    }
 
     private void viewAmmo() {
         System.out.println("*** viewAmmo function called ***");
@@ -247,13 +247,20 @@ public class GameMenuView extends View {
         ViewScenes viewScenes = new ViewScenes();
         viewScenes.display();
     }
+
+    private void printInventoryReport() {
+        // prompt for and get the name of the file to save the game in
+        this.console.println("\n\nChoose a file to print your report."
+                + "** example: Save.txt **");
+        String filePath = this.getInput();
         
+        try {
+            //save the game to the specified file
+            GameControl.printInventoryReport(TheHunted.getCurrentGame(), filePath);
+        } catch (Exception ex) {
+            ErrorView.display(" ", ex.getMessage());
+        }
+    }
 
-
-
-
-
-
-
-    
+     
 }

@@ -1,0 +1,10 @@
+
+------------------------------------------
+    Here is your backpack inventory       
+------------------------------------------
+    Item            Type    Quantity                
+------------------------------------------
+0. Canteen          water       1                   
+1. Shotgun Shells   ammo        3                         
+------------------------------------------
+Total items in the backpack = 2

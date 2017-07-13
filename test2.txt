@@ -1,0 +1,13 @@
+
+------------------------------------------
+    Here is your backpack inventory       
+------------------------------------------
+Item                Type    Quantity                
+------------------------------------------
+0. Cookies          food    1                      
+1. MRE              food    3                  
+2. Canteen          water   2                       
+3. Rifle Ammo       ammo    2                         
+4. Gloves           clothing1                         
+5. Sunglasses       clothing1                             
+Total items in the backpack = 6

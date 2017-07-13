@@ -1,0 +1,12 @@
+
+------------------------------------------
+    Here is your backpack inventory       
+------------------------------------------
+Item                Type    Quantity                
+------------------------------------------
+0. Canteen          water   0                       
+1. MRE              food    3                  
+2. Jerky            food    2                    
+3. Rifle Ammo       ammo    2                         
+4. Ghillie Suit     clothing1                               
+Total items in the backpack = 5
