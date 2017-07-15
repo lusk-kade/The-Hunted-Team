@@ -75,7 +75,6 @@ public class MapControl {
         currentScene.setDescription(                
                 "the high desert location. The desert is hot and dry."
                 + " You will need plenty of water.");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.highDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
 
@@ -87,7 +86,6 @@ public class MapControl {
                 + " and be aware of your surroundings."
                 + " I hope you brought light to shine"
                 + " in the darkness.");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.nightDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
 
@@ -125,7 +123,6 @@ public class MapControl {
         currentScene.setSymbol("SR");
         currentScene.setDescription("San Juan River!");
         currentScene.setInventory(inventory[InventoryItemType.bow.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.sanJuanRiver.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -133,7 +130,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("VR");
         currentScene.setDescription("Virgin River!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.virginRiver.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -142,7 +138,6 @@ public class MapControl {
         currentScene.setSymbol("WR");
         currentScene.setDescription("White River!");
         currentScene.setInventory(inventory[InventoryItemType.crackers.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.whiteRiver.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -160,7 +155,6 @@ public class MapControl {
         currentScene.setSymbol("MF");
         currentScene.setDescription("Foraker Mountain!");
         currentScene.setInventory(inventory[InventoryItemType.mre.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.mountForaker.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -176,7 +170,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("MB");
         currentScene.setDescription("Blackburn Moutain!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.mountBlackburn.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -184,7 +177,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("MH");
         currentScene.setDescription("Hunter Mountain!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.mountHunter.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -192,7 +184,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("OS");
         currentScene.setDescription("Okefenokee Swamp! Good luck pronouncing that.");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.okefenokeeSwamp.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -201,7 +192,6 @@ public class MapControl {
         currentScene.setSymbol("CS");
         currentScene.setDescription("Cork Screw Swamp!");
         currentScene.setInventory(inventory[InventoryItemType.knife.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.corkscrewSwamp.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -217,7 +207,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("GS");
         currentScene.setDescription("Green Swamp!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.greenSwamp.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -234,7 +223,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("SF");
         currentScene.setDescription("Sierra National Forest!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.sierraNationalForest.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -242,7 +230,7 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("CN");
         currentScene.setDescription("Cleveland National Forest!");
-        currentScene.setAnimal(Animal.bear);
+        currentScene.setAnimal(Animal.deer);
         scenes[SceneType.clevelandNationalForest.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -250,7 +238,6 @@ public class MapControl {
         currentScene = new Scene();
         currentScene.setSymbol("CF");
         currentScene.setDescription("Chandelier Forest!");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.chandelierForest.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         
@@ -267,7 +254,6 @@ public class MapControl {
         currentScene.setSymbol("FI");
         currentScene.setDescription("the end of the game."
                 + " Great job! You played a great game.");
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.finish.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
         return scenes;
