@@ -37,7 +37,6 @@ public class GameMenuView extends View {
                         + "\n*************************************"
                         + "\nV - View Map                         " 
                         + "\nM - Move to new location             "
-                        + "\nZ - Print Inventory Report           " 
                         + "\nA - View Ammo                        " 
                         + "\nW - Select Weapon                    "
                         + "\nI - Pick up item                     " 
@@ -65,9 +64,6 @@ public class GameMenuView extends View {
                 break;
             case "M": // View the map
                 this.movePlayer();
-                break;
-            case "Z": // Print a character stream report.
-                this.printInventoryReport();
                 break;
             case "A": // View the ammo
                 this.viewAmmo();
@@ -246,21 +242,5 @@ public class GameMenuView extends View {
     private void viewScenes() {
         ViewScenes viewScenes = new ViewScenes();
         viewScenes.display();
-    }
-
-    private void printInventoryReport() {
-        // prompt for and get the name of the file to save the game in
-        this.console.println("\n\nChoose a file to print your report."
-                + "** example: Save.txt **");
-        String filePath = this.getInput();
-        
-        try {
-            //save the game to the specified file
-            GameControl.printInventoryReport(TheHunted.getCurrentGame(), filePath);
-        } catch (Exception ex) {
-            ErrorView.display(" ", ex.getMessage());
-        }
-    }
-
-     
+    }    
 }
