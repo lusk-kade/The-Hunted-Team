@@ -14,6 +14,7 @@ import java.util.ArrayList;
  * @author lus12
  */
 public class InventoryControl { 
+  
     
     private double nameValue;
     private double gamePoints;
@@ -53,7 +54,7 @@ public class InventoryControl {
             
   }
   
-       
+      
  
   public void addTotalPoints(ArrayList<Total> gamePoints) {
       

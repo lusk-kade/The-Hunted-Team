@@ -84,15 +84,6 @@ public class HelpMenuView extends View {
             case "M":
                 this.displayHowToMove();
                 break;
-            case "T":
-                this.TreasureBox();
-                break;
-            case "W":
-                this.displayWeapons();
-                break;
-            case "L":
-                this.displayLocations();
-                break;
             default:
                 ErrorView.display(this.getClass().getName(),
                         "\n*** Invalid selection *** Try again");
@@ -104,23 +95,13 @@ public class HelpMenuView extends View {
         
         
     private void displayGameObjective() {
-        System.out.println("\n*** displayGameObjective function called ***");
+        System.out.println("\n*** Hunt until you want to go home. ***"
+                          +"\n*** Hunt unyil you become the hunted. *** ");
     }
 
     private void displayHowToMove() {
-        System.out.println("\n*** displayHowToMove function called ***");
+        System.out.println("\n*** Select the move option and enter two letter code. ***");
     }
 
-    private void TreasureBox() {
-        System.out.println("\n*** TreasureBox function called ***");
-    }
-
-    private void displayWeapons() {
-        System.out.println("\n*** displayWeapons function called ***");
-    }
-
-    private void displayLocations() {
-        System.out.println("\n*** displayLocations function called ***");
-    }
 
 }

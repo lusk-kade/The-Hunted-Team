@@ -65,23 +65,11 @@ public class GameMenuView extends View {
             case "M": // View the map
                 this.movePlayer();
                 break;
-            case "A": // View the ammo
-                this.viewAmmo();
-                break;
             case "W": // Select your weapon
                 this.selectWeapon();
                 break;
             case "I": 
                 this.pickUpItem();
-                break;
-            case "U": // Select the desired animal
-                this.useWeapon();
-                break;
-            case "R": // Select the desired animal
-                this.retrieveAnimal();
-                break;
-            case "P": // Select the desired animal
-                this.playerStats();
                 break;
             case "G": // Select the desired animal
                 this.viewGear();
@@ -182,26 +170,12 @@ public class GameMenuView extends View {
         this.console.println("There is a "+ map.getCurrentScene().getInventory().getName() + " near by.");
  }
 
-    private void viewAmmo() {
-        System.out.println("*** viewAmmo function called ***");
-    }
 
     private void selectWeapon() {
          WeaponsView weaponsView = new WeaponsView(); 
          weaponsView.display();
     }
 
-    private void useWeapon() {
-        System.out.println("*** useWeapon function called ***");
-    }
-
-    private void retrieveAnimal() {
-        System.out.println("*** retrieveAnimal function called ***");
-    }
-
-    private void playerStats() {
-        System.out.println("*** playerStats function called ***");
-    }
 
     private void viewGear() {
         InventoryView inventoryView = new InventoryView();
