@@ -14,6 +14,8 @@ import byui.cit1260.theHunted.model.Map;
 import byui.cit1260.theHunted.model.Scene;
 import byui.cit1260.theHunted.model.SceneType;
 import byui.cit260.theHunted.exceptions.MapControlException;
+import byui.cit260.theHunted.view.GameMenuView;
+import byui.cit260.theHunted.view.StartProgramView;
 import java.util.ArrayList;
 import thehunted.TheHunted;
 
@@ -97,7 +99,6 @@ public class MapControl {
                 + " you have to be fast to hunt game"
                 + " in this area.");
         currentScene.setInventory(inventory[InventoryItemType.cookies.ordinal()]);
-        currentScene.setAnimal(Animal.bear);
         scenes[SceneType.lowDesert.ordinal()] = currentScene;
         // Keep adding until we hit 25 scenes
        
@@ -176,8 +177,12 @@ public class MapControl {
         
         currentScene = new Scene();
         currentScene.setSymbol("MH");
-        currentScene.setDescription("Hunter Mountain!");
-        scenes[SceneType.mountHunter.ordinal()] = currentScene;
+        currentScene.setDescription("Hunter Mountain!"
+                                   +"\nYou hear something behind you..."
+                                   +"\nThe elk charged and speard you!"
+                                   +"\nThe mighty hunter has fallen.");
+        currentScene.setAnimal(Animal.elk);
+        scenes[SceneType.mountHunter.ordinal()] = currentScene;  
         // Keep adding until we hit 25 scenes
         
 
