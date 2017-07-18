@@ -5,13 +5,13 @@
  */
 package byui.cit260.theHunted.view;
 
-
 import buyi.cit260.theHunted.control.InventoryControl;
 import byui.cit260.theHunted.view.GameMenuView;
 import byui.cit1260.theHunted.model.Animal;
 import static byui.cit1260.theHunted.model.Animal.bear;
 import static byui.cit1260.theHunted.model.Animal.rabbit;
 import byui.cit1260.theHunted.model.Game;
+import byui.cit1260.theHunted.model.InventoryItemType;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit260.theHunted.exceptions.InventoryControlException;
 import java.io.BufferedReader;
@@ -28,40 +28,36 @@ import thehunted.TheHunted;
  * @author Justin
  */
 public class HuntingView extends View {
-    
+
     private double nameValue;
     private double gamePoints;
     private String promptMessage;
     private Object animalName;
     private int animalWeight;
 
-
- 
-    
     public HuntingView() {
 
-         super ( "\n***********************************"
-               + "\n*                                 *"
-               + "\n* As you may have noticed there   *"
-               + "\n* is an animal near by and it is  *"
-               + "\n* time to hunt.                   *"
-               + "\n*                                 *"                 
-               + "\n***********************************"
-               + "\n                                   "
-               + "\n F - Will fire your weapon         "
-               + "\n S - Will skip this shot           "
-               + "\n                                   "                 
-               + "\n***********************************"); 
-         
-         
-    }     
-    
+        super("\n***********************************"
+                + "\n*                                 *"
+                + "\n* As you may have noticed there   *"
+                + "\n* is an animal near by and it is  *"
+                + "\n* time to hunt.                   *"
+                + "\n*                                 *"
+                + "\n***********************************"
+                + "\n                                   "
+                + "\n F - Will fire your weapon         "
+                + "\n S - Will skip this shot           "
+                + "\n                                   "
+                + "\n***********************************");
+
+    }
+
     @Override
     public boolean doAction(String value) {
-        
+
         try {
             value = value.toUpperCase(); // convert choice to upper case
-            
+
             switch (value) {
                 case "F":
                     this.fireWeapon();
@@ -71,11 +67,10 @@ public class HuntingView extends View {
                     break;
                 default:
                     ErrorView.display(this.getClass().getName(),
-                            "\n*** Invalid Selection *** Try again");                
+                            "\n*** Invalid Selection *** Try again");
                     break;
             }
-            
-            return false;
+
         } catch (InventoryControlException ex) {
             Logger.getLogger(HuntingView.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -88,65 +83,62 @@ public class HuntingView extends View {
 
         double pointScalar = .1;
         double animalWeight = 0;
-            
-        this.console.println("\n*** Good Shot! You aimed, fired, and have now collected your kill ***");
-            
-        this.console.println("\nPlease enter animal name");
-            String animalName = this.getInput();
-            
-        this.console.println("\nPlease enter animal weight");
-            animalWeight = this.getanimalWeight(animalName);
-            
-        return animalName;
-            
-  }
-    
-    private double getanimalWeight(String animalName) throws InventoryControlException, IOException {
         
-       double pointScalar = .1;
-       double animalWeight = 0;
-       
-       animalWeight = keyboard.read();
-       
-       switch (animalName) {
-           case "rabbit":
-            nameValue = 1;
-            break;
-           case "deer":
-            nameValue = 80;
-            break;
-           case "moose":
-            nameValue = 125;
-            break;
-           case "bear":
-            nameValue = 200;
-            break;
-           default:
-            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
-       }
-/**       
-       if ("rabbit".equals(animalName) & (animalWeight > 15 || animalWeight < 3)) {
-            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
-       }
-       
-       if ("deer".equals(animalName) & (animalWeight > 450 || animalWeight < 400)) {
-            throw new InventoryControlException("\n*** Invalide animal name *** Try again");
-       }
-**/
-        double points = (animalWeight * nameValue) / pointScalar;
-            return points;
-           
-   
+        this.console.println("\n*** Good Shot! You aimed, fired, and have now collected your kill ***");
+
+        this.console.println("\nPlease enter animal name");
+        String animalName = this.getInput();
+
+        this.console.println("\nPlease enter animal weight");
+        animalWeight = this.getanimalWeight(animalName);
+
+        return animalName;
+
     }
-    
-        private void skipShot() {
+
+    private double getanimalWeight(String animalName) throws InventoryControlException, IOException {
+
+        double pointScalar = .1;
+
+        animalWeight = keyboard.read();
+
+        switch (animalName) {
+            case "rabbit":
+                nameValue = 1;
+                break;
+            case "deer":
+                nameValue = 80;
+                break;
+            case "moose":
+                nameValue = 125;
+                break;
+            case "bear":
+                nameValue = 200;
+                break;
+            case "elk":
+                nameValue = 250;
+                break;
+            case "alligator":
+                nameValue = 400;
+                break;
+            case "goat":
+                nameValue = 450;
+                break;
+            case "snake":
+                nameValue = 150;
+                break;
+            default:
+                throw new InventoryControlException("\n*** Invalide animal name *** Try again");
+        }
+
+        double points = (animalWeight * nameValue) / pointScalar;
+        return points;
+
+    }
+
+    private void skipShot() {
         GameMenuView gameMenuView = new GameMenuView();
         gameMenuView.display();
-}
-
-    
-    
     }
-    
-    
 
+}

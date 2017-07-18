@@ -9,6 +9,7 @@ import buyi.cit260.theHunted.control.GameControl;
 import byui.cit1260.theHunted.model.Animal;
 import byui.cit1260.theHunted.model.Game;
 import byui.cit1260.theHunted.model.Inventory;
+import byui.cit1260.theHunted.model.InventoryItemType;
 import byui.cit1260.theHunted.model.Location;
 import byui.cit1260.theHunted.model.Map;
 import byui.cit260.theHunted.exceptions.GameControlException;
@@ -37,12 +38,8 @@ public class GameMenuView extends View {
                         + "\n*************************************"
                         + "\nV - View Map                         " 
                         + "\nM - Move to new location             "
-                        + "\nA - View Ammo                        " 
                         + "\nW - Select Weapon                    "
-                        + "\nI - Pick up item                     " 
-                        + "\nU - Use Weapon                       "   
-                        + "\nR - Retrieve Animal                  " 
-                        + "\nP - Player Status                    " 
+                        + "\nI - Pick up item                     "   
                         + "\nG - View Gear in Backpack            "
                         + "\nE - View Scenes & Descriptions       "                            
                         + "\nS - Save Game                        " 
@@ -172,8 +169,8 @@ public class GameMenuView extends View {
 
 
     private void selectWeapon() {
-         WeaponsView weaponsView = new WeaponsView(); 
-         weaponsView.display();
+        WeaponsView weaponsView = new WeaponsView(); 
+        weaponsView.display();
     }
 
 

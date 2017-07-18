@@ -20,7 +20,10 @@ public enum Animal implements Serializable {
     deer("White Tale"),
     elk("Elk"),
     moose("Moose"),
-    bear("Grizzly");
+    bear("Grizzly"),
+    alligator("Gators"),
+    goat("Mountain Goats"),
+    snake("Snakes");
     
     
     // Instance variables

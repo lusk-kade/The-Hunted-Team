@@ -5,6 +5,9 @@
  */
 package byui.cit260.theHunted.view;
 
+import byui.cit1260.theHunted.model.Inventory;
+import byui.cit1260.theHunted.model.InventoryItemType;
+
 /**
  *
  * @author Robert
@@ -20,6 +23,8 @@ public class WeaponsView extends View {
                     + "\nR - Rifle"
                     + "\nB - Bow"
                     + "\nK - Knife"
+                    + "\nS - Shotgun"
+                    + "\nP - Pistol"
                     + "\nQ - Quit"
                     + "\n-------------------------------------");
     
@@ -30,14 +35,20 @@ public class WeaponsView extends View {
         value = value.toUpperCase(); // convert choice to upper case
         
         switch (value) {
-            case "R": // create and start a new game
+            case "R":
                 this.chooseRifle();
                 break;
-            case "B": // get and start an existing game
+            case "B":
                 this.chooseBow();
                 break;
-            case "K": // get game menu
+            case "K":
                 this.chooseKnife();
+                break;
+            case "S":
+                this.chooseShotgun();
+                break;
+            case "P":
+                this.choosePistol();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),
@@ -47,16 +58,27 @@ public class WeaponsView extends View {
         
         return false;
     }
+    
 
-    private void chooseRifle() {
-        System.out.println("*** chooseRifle function called ***");
+    private void chooseRifle() {    
+        this.console.print("You have chosen to use your rifle.");
     }
-
+        
     private void chooseBow() {
-        System.out.println("*** chooseBow function called ***");
+        this.console.print("You have chosen to use your bow.");
     }
 
     private void chooseKnife() {
-        System.out.println("*** chooseKnife function called ***");
+        this.console.print("You have chosen to use your knife.");
     }
+
+    private void chooseShotgun() {
+        this.console.print("You have chosen to use your shotgun.");
+    }
+
+    private void choosePistol() {
+        this.console.print("You have chosen to use your pistol.");
+    }
+    
+    
 }

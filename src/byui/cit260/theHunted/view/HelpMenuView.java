@@ -96,7 +96,7 @@ public class HelpMenuView extends View {
         
     private void displayGameObjective() {
         System.out.println("\n*** Hunt until you want to go home. ***"
-                          +"\n*** Hunt unyil you become the hunted. *** ");
+                          +"\n*** Hunt until you become the hunted. *** ");
     }
 
     private void displayHowToMove() {
